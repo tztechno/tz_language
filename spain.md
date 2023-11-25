@@ -41,3 +41,45 @@ Ejemplo: Estamos en la playa. (ビーチにいます。)
 進行形や一時的な状態を強調するときにも使います。
 Ejemplo: Estoy estudiando para el examen. (試験のために勉強しています。)
 
+<br/>
+<br/>
+
+* "Ser" の変化:
+
+Presente (現在時制):
+
+yo soy - 私は
+tú eres - あなたは
+él/ella/usted es - 彼/彼女/それは
+nosotros/nosotras somos - 私たちは
+vosotros/vosotras sois - あなたたちは
+ellos/ellas/ustedes son - 彼ら/彼女たち/それらは
+Pretérito (過去時制):
+
+yo fui - 私は
+tú fuiste - あなたは
+él/ella/usted fue - 彼/彼女/それは
+nosotros/nosotras fuimos - 私たちは
+vosotros/vosotras fuisteis - あなたたちは
+ellos/ellas/ustedes fueron - 彼ら/彼女たち/それらは
+など。
+
+* "Estar" の変化:
+
+Presente (現在時制):
+
+yo estoy - 私は
+tú estás - あなたは
+él/ella/usted está - 彼/彼女/それは
+nosotros/nosotras estamos - 私たちは
+vosotros/vosotras estáis - あなたたちは
+ellos/ellas/ustedes están - 彼ら/彼女たち/それらは
+Pretérito (過去時制):
+
+yo estuve - 私は
+tú estuviste - あなたは
+él/ella/usted estuvo - 彼/彼女/それは
+nosotros/nosotras estuvimos - 私たちは
+vosotros/vosotras estuvisteis - あなたたちは
+ellos/ellas/ustedes estuvieron - 彼ら/彼女たち/それらは
+など。
