@@ -21,3 +21,21 @@
     * su/sus - 彼/彼女/それの（フォーマルまたは複数）
     * nuestro/nuestra/nuestros/nuestras - 私たちの
     * vuestro/vuestra/vuestros/vuestras - あなたたちの
+
+
+* "Ser" の使い方:
+
+永続的な性質や特性を表すときに使います。 例えば、誕生地、国籍、職業など。
+Ejemplo (例): Ella es mexicana. (彼女はメキシコ人です。)
+時刻や日付、季節などの固定的な情報を表現する際にも使用されます。
+Ejemplo: Hoy es lunes. (今日は月曜日です。)
+
+
+* "Estar" の使い方:
+
+一時的な状態や感情、場所に関連するときに使います。 例えば、感情や健康状態、場所にいる状態など。
+Ejemplo: Estoy cansado. (疲れています。)
+Ejemplo: Estamos en la playa. (ビーチにいます。)
+進行形や一時的な状態を強調するときにも使います。
+Ejemplo: Estoy estudiando para el examen. (試験のために勉強しています。)
+
