@@ -1,5 +1,5 @@
 
-主格（Subject Pronouns）:
+*主格（Subject Pronouns）:
 
 je - 私
 tu - あなた（単数、親しい関係）
@@ -9,7 +9,7 @@ vous - あなたたち（親しい関係またはフォーマル）
 ils/elles - 彼ら/彼女たち
 
 
-目的格（Object Pronouns）:
+*目的格（Object Pronouns）:
 
 me - 私（目的格）
 te - あなた（単数、親しい関係）
@@ -19,7 +19,7 @@ vous - あなたたち（親しい関係またはフォーマル）
 les - 彼ら/彼女たち（複数）
 
 
-間接目的格（Indirect Object Pronouns）:
+*間接目的格（Indirect Object Pronouns）:
 
 me - 私に
 te - あなたに（単数、親しい関係）
@@ -29,7 +29,7 @@ vous - あなたたちに（親しい関係またはフォーマル）
 leur - 彼ら/彼女たちに
 
 
-所有格（Possessive Pronouns）:
+*所有格（Possessive Pronouns）:
 
 mon/ma/mes - 私の
 ton/ta/tes - あなたの（単数）
