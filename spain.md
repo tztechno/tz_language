@@ -22,6 +22,8 @@
     * nuestro/nuestra/nuestros/nuestras - 私たちの
     * vuestro/vuestra/vuestros/vuestras - あなたたちの
 
+<br/>
+<br/>
 
 * "Ser" の使い方:
 
