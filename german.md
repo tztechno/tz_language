@@ -1,4 +1,4 @@
-主格（Nominative Case）:
+* 主格（Nominative Case）:
 
 ich - 私
 du - あなた（単数、親しい関係）
@@ -8,7 +8,7 @@ ihr - あなたたち（親しい関係）
 sie/Sie - 彼ら/彼女たち/それら/あなたたち（フォーマルまたは複数）
 
 
-対格（Accusative Case）:
+* 対格（Accusative Case）:
 
 mich - 私（目的格）
 dich - あなた（単数、親しい関係）
@@ -18,7 +18,7 @@ euch - あなたたち（親しい関係）
 sie/Sie - 彼ら/彼女たち/それら/あなたたち（フォーマルまたは複数）
 
 
-与格（Dative Case）:
+* 与格（Dative Case）:
 
 mir - 私に
 dir - あなたに（単数、親しい関係）
@@ -28,7 +28,7 @@ euch - あなたたちに（親しい関係）
 ihnen/Ihnen - 彼らに/彼女たちに/それらに/あなたたちに（フォーマルまたは複数）
 
 
-所有格（Possessive Pronouns）:
+* 所有格（Possessive Pronouns）:
 
 mein/meine - 私の
 dein/deine - あなたの（単数）
