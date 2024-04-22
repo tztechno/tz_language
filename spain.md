@@ -1,4 +1,27 @@
 
+
+---
+
+Hola
+...
+buen día
+...
+que tenga un lindo día
+...
+Tomaré este
+
+---
+
+hello
+...
+good morning
+...
+have a nice day
+...
+I will take this
+
+---
+
 * 		主格（Subject Pronouns）:
     * yo - 私
     * tú - あなた（単数、親しい関係）
