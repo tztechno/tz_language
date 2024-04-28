@@ -1,26 +1,17 @@
+---
+---
+De repente empezó a llover.
 
+Poco a poco empezó a brillar.
 
 ---
+It suddenly started raining.
 
-Hola
-...
-buen día
-...
-que tenga un lindo día
-...
-Tomaré este
+It gradually started shining.
 
 ---
-
-hello
-...
-good morning
-...
-have a nice day
-...
-I will take this
-
 ---
+
 
 * 		主格（Subject Pronouns）:
     * yo - 私
