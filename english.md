@@ -1,6 +1,13 @@
 
 ---
 ```
+You're welcome! 
+The ~/ operator is indeed handy for performing integer division in Dart. 
+If you have any more questions or need further assistance with your Dart code or anything else, 
+feel free to ask!
+```
+---
+```
 Number of features of the model must match the input. 
 Model n_features_ is 924 and input n_features is 557.
 ```
