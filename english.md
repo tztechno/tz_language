@@ -1,7 +1,6 @@
 
 ---
 ```
-ValueError: 
 Number of features of the model must match the input. 
 Model n_features_ is 924 and input n_features is 557.
 ```
