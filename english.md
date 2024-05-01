@@ -1,4 +1,10 @@
 
+
+---
+```
+I'm glad you found it helpful!
+If you have any more questions or need further assistance with Forth or anything else, feel free to ask.
+```
 ---
 ```
 Hi! Is Carp project still alive/maintained? 🙂
@@ -16,8 +22,7 @@ Please make sure you have the correct access rights and the repository exists.
 ```
 You're welcome! 
 The ~/ operator is indeed handy for performing integer division in Dart. 
-If you have any more questions or need further assistance with your Dart code or anything else, 
-feel free to ask!
+If you have any more questions or need further assistance with your Dart code or anything else, feel free to ask!
 ```
 ---
 ```
