@@ -2,6 +2,7 @@
 ---
 ```
 Hi! Is Carp project still alive/maintained? 🙂
+Not much activity right now, but I think the community is kind of still here. Alive but snoozing maybe ;)
 ```
 ---
 ```
