@@ -1,7 +1,9 @@
 
 ---
 ```
-You're welcome! I'm glad I could help resolve the issue with the Zig code. Thank you for the kind words and feedback, it's very much appreciated. Feel free to reach out if you have any other questions or need further assistance.
+You're welcome! I'm glad I could help resolve the issue with the Zig code.
+Thank you for the kind words and feedback, it's very much appreciated.
+Feel free to reach out if you have any other questions or need further assistance.
 ```
 ---
 ```
