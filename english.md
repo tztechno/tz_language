@@ -2,8 +2,8 @@
 
 ---
 ```
+This fix adds blank columns to the left and right, closing the gap between images.
 この修正により、左右に空白の列が追加され、画像間の間隔が詰まります。
-
 ```
 ---
 ```
