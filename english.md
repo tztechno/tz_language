@@ -2,6 +2,12 @@
 
 ---
 ```
+That’s great. Unexpected usage.
+I'm glad you found it helpful! 
+PowerShell has its own unique syntax and functions, so it sometimes requires a different approach compared to other languages. 
+```
+---
+```
 I'm glad you found it helpful!
 If you have any more questions or need further assistance with Forth or anything else, feel free to ask.
 ```
