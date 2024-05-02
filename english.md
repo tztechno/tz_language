@@ -9,7 +9,8 @@ Feel free to reach out if you have any other questions or need further assistanc
 ```
 That’s great. Unexpected usage.
 I'm glad you found it helpful! 
-PowerShell has its own unique syntax and functions, so it sometimes requires a different approach compared to other languages. 
+PowerShell has its own unique syntax and functions,
+so it sometimes requires a different approach compared to other languages. 
 ```
 ---
 ```
