@@ -2,6 +2,8 @@
 
 https://vercel.com/
 
+https://qiita.com/Masanarea_qiita/items/2e1616e4e18f6c8ee26d
+
 ---
 
 小規模なLaravelのサイトであれば、Vercelの無料枠でホスティングすることができます。以下は一般的な手順です：
