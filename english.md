@@ -1,4 +1,10 @@
 
+
+---
+```
+この修正により、左右に空白の列が追加され、画像間の間隔が詰まります。
+
+```
 ---
 ```
 You're welcome! I'm glad I could help resolve the issue with the Zig code.
