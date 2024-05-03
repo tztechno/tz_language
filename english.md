@@ -1,7 +1,20 @@
 
+---
+```
 
-
-
+```
+---
+```
+If you've already confirmed that the data type of your input tensors is torch.float64
+and you're still encountering the "Found dtype Double but expected Float" error,
+the issue might be happening internally during the training process.
+```
+---
+```
+If the dtype of the loaded tensors from your datamodule is torch.float64,
+and your model is expecting torch.float32 or torch.float,
+this could be the source of the error you're encountering during training.
+```
 ---
 ```
 For each image, a rating value is given as a float value. 
