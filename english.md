@@ -2,9 +2,11 @@
 
 
 
-
-
-
+---
+```
+For each image, a rating value is given as a float value. 
+This is not a classification task.
+```
 ---
 ```
 Great, I'm glad to hear you achieved the desired result!
