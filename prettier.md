@@ -9,8 +9,11 @@ https://www.youtube.com/watch?v=zoaIv5ifoPI
 コマンド パレットの使用 (CMD/CTRL + Shift + P)
 
 1. CMD + Shift + P -> ドキュメントのフォーマット
+
 または
+
 1. きれいにしたいテキストを選択します
+   
 2. CMD + Shift + P -> フォーマットの選択
 
 ---
