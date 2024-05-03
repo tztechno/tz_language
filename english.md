@@ -1,5 +1,18 @@
 
 
+
+
+
+
+
+---
+```
+Great, I'm glad to hear you achieved the desired result!
+Your script looks correct.
+It splits the input string into lines, then splits each line into space-separated parts,
+converts them to numbers, assigns them to variables $n and $w,
+calculates the division $n / $w, and finally uses floor to round down the result. 
+```
 ---
 ```
 This fix adds blank columns to the left and right, closing the gap between images.
