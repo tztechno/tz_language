@@ -5,6 +5,10 @@
 ```
 ---
 ```
+RuntimeError: Found dtype Double but expected Float
+```
+---
+```
 If you've already confirmed that the data type of your input tensors is torch.float64
 and you're still encountering the "Found dtype Double but expected Float" error,
 the issue might be happening internally during the training process.
