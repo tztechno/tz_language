@@ -1,20 +1,18 @@
 
-
-## 0.タイトル
 # streamlit app を初めて開発・公開した件
 
-## 1. streamlitとは
+### 1. streamlitとは
 StreamlitはPythonのウェブアプリケーションを構築するためのフレームワークの一つです。
 Pythonのコード内に直接書かれたコマンドでウェブアプリケーションを構築するため、HTMLやCSSなどのファイルを扱う必要がありません。
 さらに、作ったアプリをStreamlit Sharingと呼ばれるサービスを介して、無料でデプロイ・公開できるのが大きな魅力です。
 
-## 2. プロジェクトの目的:
+### 2. プロジェクトの目的:
 以前、kaggleのtarotカードのデータを用いてpythonで作成していた占いゲームを、Streamlit用に焼き直すことにした。
 内容は、3枚のカードをランダムに選び、カードとカードの意味する内容を表示するという、単純なものです。
 
 https://www.kaggle.com/code/stpeteishii/tarot-reading
 
-## 3. 開発過程:
+### 3. 開発過程:
 まずはlocalで開発して動作確認まで行いました。
 
 python -m venv .venv
@@ -41,7 +39,7 @@ AttributeError: module 'cv2.dnn' has no attribute 'DictValue' のエラーが発
 これがなかなか解決しないので、原因を理解しないまま、元コードについて、cv2でなくPILを使うことにして、pushやり直し。
 PILを使ったコードではlocal,本番完環境共に問題は起きませんでした。
 
-## 4. コードの解説:
+### 4. コードの解説:
 
 ```
 import streamlit as st
@@ -92,15 +90,15 @@ if st.button("Predict Your Fortune"):
 
 ```
 
-## 5. デモやデモ動画:
+### 5. デモやデモ動画:
 https://app-tarrot-reading-mlnessbppgllzg2dns5pfc.streamlit.app/
 https://github.com/tztechno/streamlit-tarrot-reading/tree/master
 
-## 6. 今後の展望:
+### 6. 今後の展望:
 機械学習でトレーニング済みのモデルを使ったアプリも作ってみたいです。
 cv2は使う場面は多くありそうなので、解決方法は見つけておく必要がありますね。
 
-## 7. 参考文献やリソース:
+### 7. 参考文献やリソース:
 https://streamlit.io/
 https://docs.streamlit.io/
 https://share.streamlit.io/
