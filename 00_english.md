@@ -9,7 +9,13 @@
 ```
 ---
 ```
-
+I additionally tried to visualize the time distribution for death/survival in my notebook,
+and there is clearly a difference. I can understand that Imporetane is expensive.
+But is that the problem? The definition of time is not the time from the occurrence of an event to death.
+Time is different from Target.
+However, it is up to the analyst whether or not to remove time from feature.
+If the data distributor believes that time should not be included in the analysis,
+it should be removed from the dataset first.
 ```
 ---
 ```
