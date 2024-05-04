@@ -5,6 +5,18 @@
 ```
 ---
 ```
+
+```
+---
+```
+Before diving into feature selection for your heart failure prediction model,
+take a moment to review the discussion section.
+You'll find valuable insights about certain variables that should be excluded to prevent bias
+or inaccuracies in your predictions. 
+Let's build models that prioritize accuracy and fairness!
+```
+---
+```
 RuntimeError: Found dtype Double but expected Float
 ```
 ---
