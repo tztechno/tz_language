@@ -9,6 +9,16 @@
 ```
 ---
 ```
+
+```
+---
+```
+Hey Rabie, I have a question about this.
+Maybe I'm interpreting this dataset incorrectly.
+I've removed time as a feature based on your comment but I'm curious:
+```
+---
+```
 Before diving into feature selection for your heart failure prediction model,
 take a moment to review the discussion section.
 You'll find valuable insights about certain variables that should be excluded to prevent bias
