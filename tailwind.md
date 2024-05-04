@@ -1,5 +1,33 @@
 
 
+
+---
+
+Tailwind CSSをHTMLに組み込むには、まずTailwind CSSのスタイルシートをHTMLファイルにリンクする必要があります。次に、Tailwind CSSのクラスをHTML要素に適用します。以下は、その手順を示したコード例です：
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Example</title>
+  <!-- Tailwind CSSのスタイルシートをリンク -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Tailwind CSSのクラスを適用した要素 -->
+  <div class="bg-blue-500 text-white p-4">
+    This is a blue box with white text.
+  </div>
+</body>
+</html>
+```
+
+このHTMLファイルでは、<head>セクション内でTailwind CSSのスタイルシートをCDN経由でリンクし、<body>セクション内でbg-blue-500、text-white、p-4のTailwind CSSクラスを適用した<div>要素を記述しています。
+
+このコードをHTMLファイルに保存し、ウェブブラウザで開くことで、Tailwind CSSの効果を試すことができます。
+
 ---
 
 
