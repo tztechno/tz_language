@@ -1,7 +1,23 @@
 
+
+
 ---
 ```
 
+```
+---
+```
+
+```
+---
+```
+Yes, you can use math.Sqrt in GoLang to calculate the square root.
+However, you need to import the math package explicitly to use it.
+Here's your corrected code:
+
+Converted the result of math.Sqrt to float64 before converting it to an integer.
+This is necessary because math.Sqrt returns a float64 value,
+and you need to explicitly cast it to float64 before converting it to an integer.
 ```
 ---
 ```
