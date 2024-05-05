@@ -4,7 +4,7 @@
 
 ---
 
-はい、Nuxt.jsはVue.jsを前提としています。
+Nuxt.jsはVue.jsを前提としています。
 
 Nuxt.jsはVue.jsのエコシステムを活用し、Vueコンポーネント、Vue Router、Vuexなどとのシームレスな統合を提供します。
 
