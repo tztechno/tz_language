@@ -5,7 +5,7 @@
 ```
 ---
 ```
-
+Corrected to use intval instead of int and sqrt directly without math.
 ```
 ---
 ```
