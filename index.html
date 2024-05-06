@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        #sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        #content {
+            width: 80%;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <h2>Contents</h2>
+        <input type="file" id="fileInput" multiple accept=".md">
+    </div>
+
+    <div id="content">
+        <h1 id="markdownTitle">Content</h1>
+        <div id="markdownContent">
+            <!-- Markdown内容がここに表示されます -->
+        </div>
+    </div>
+
+    <script>
+        // ファイル選択時に呼び出される関数
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file && file.name.endsWith('.md')) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const text = event.target.result;
+                    document.getElementById('markdownTitle').innerText = file.name;
+                    document.getElementById('markdownContent').innerText = text;
+                };
+                reader.readAsText(file);
+            } else {
+                alert('Please select a markdown file.');
+            }
+        }
+
+        // ページ読み込み時にファイル選択フィールドにイベントリスナーを追加する
+        window.onload = function () {
+            document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+        };
+    </script>
+
+</body>
+
+</html>
