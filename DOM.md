@@ -1,6 +1,49 @@
 # DOM
 ### 
 
+
+
+---
+
+
+DOMは、ウェブページの構造を表現するためのツリー構造ですが、「ホルダ構成」という用語自体は一般的ではありません。
+
+DOMは、HTML文書を親子関係のノード（要素）で構成されるツリーとして表現します。このツリー構造は、ページの階層構造を反映し、各要素が親要素に含まれる子要素や兄弟要素を持つという形で定義されます。
+
+例えば、次のようなHTML文書を考えてみましょう：
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example</title>
+</head>
+<body>
+  <div id="container">
+    <h1>Hello, World!</h1>
+    <p>This is a paragraph.</p>
+  </div>
+</body>
+</html>
+```
+このHTML文書は、次のようなDOMツリーで表されます：
+
+```
+html (document)
+└── head
+│   └── title
+│       └── "Example"
+└── body
+    └── div#container
+        ├── h1
+        │   └── "Hello, World!"
+        └── p
+            └── "This is a paragraph."
+```
+ここで、html要素がルート要素であり、その子要素としてheadとbodyがあります。body要素の子要素としてdiv要素があり、その中にh1要素とp要素が含まれます。
+
+このように、DOMはHTML文書の構造を階層的に表現し、各要素がその階層内でどのような位置にあるかを示します。
+
 ---
 
 
