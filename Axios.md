@@ -3,6 +3,40 @@
 
 ---
 
+以下は、Axiosを使用せずにJavaScriptでGETリクエストを送信する例です。この例では、XMLHttpRequestオブジェクトを使用してリクエストを処理します。
+
+```
+// 新しいXMLHttpRequestオブジェクトを作成
+var xhr = new XMLHttpRequest();
+
+// リクエストを準備
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+
+// リクエストが完了したときの処理
+xhr.onload = function() {
+  // リクエストが成功したかを確認
+  if (xhr.status >= 200 && xhr.status < 300) {
+    // レスポンスを処理
+    console.log('レスポンスデータ:', JSON.parse(xhr.responseText));
+  } else {
+    // エラーを処理
+    console.error('リクエストが失敗しました:', xhr.statusText);
+  }
+};
+
+// ネットワークエラーの処理
+xhr.onerror = function() {
+  console.error('ネットワークエラーが発生しました');
+};
+
+// リクエストを送信
+xhr.send();
+```
+
+この例では、XMLHttpRequestオブジェクトを使ってGETリクエストを送信しています。xhr.open()メソッドでリクエストを準備し、xhr.onloadイベントハンドラーでリクエストが完了したときの処理を定義します。レスポンスが成功したかどうかは、xhr.statusをチェックしています。成功した場合は、xhr.responseTextからレスポンスデータを取得します。また、ネットワークエラーの場合はxhr.onerrorで処理します。
+
+---
+
 
 以下は、Axiosを使用してGETリクエストを送信し、レスポンスを処理する基本的なコード例です。
 
