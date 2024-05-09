@@ -5,6 +5,11 @@ https://github.com/marketplace/circleci
 ---
 
 (base) shun_ishii@shunnoMacBook-puro js_fetchEarthquakeData % circleci local execute -c .circleci/config.yml
+
+```
+circleci local execute -c .circleci/config.yml
+```
+
 CircleCI would like to collect CLI usage data for product improvement purposes.
 
 Participation is voluntary, and your choice can be changed at any time through the command `cli telemetry enable` and `cli telemetry disable`.
