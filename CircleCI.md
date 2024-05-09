@@ -4,6 +4,63 @@ https://github.com/marketplace/circleci
 
 ---
 
+(base) shun_ishii@shunnoMacBook-puro js_fetchEarthquakeData % circleci local execute -c .circleci/config.yml
+CircleCI would like to collect CLI usage data for product improvement purposes.
+
+Participation is voluntary, and your choice can be changed at any time through the command `cli telemetry enable` and `cli telemetry disable`.
+For more information, please see our privacy policy at https://circleci.com/legal/privacy/.
+
+Enable telemetry? Yes
+2024/05/09 21:40:18 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                       ┃
+┃  circleci local execute                                                                               ┃
+┃                                                                                                       ┃
+┃                                                                                                       ┃
+┃                                                                                                       ┃
+┃                                                                                                       ┃
+┃  Usage:                                                                                               ┃
+┃         circleci local execute <job-name> [flags]                                                     ┃
+┃                                                                                                       ┃
+┃  Local Flags:                                                                                         ┃
+┃                                                                                                       ┃
+┃       --branch string                git branch                                                       ┃
+┃       --build-agent-version string   The version of the build agent image you want to use. This can b ┃
+┃ e                                                                                                     ┃
+┃ configured by writing in $HOME/.circleci/build_agent_settings.json: '{"LatestSha256":"<version-of-bui ┃
+┃ ld-                                                                                                   ┃
+┃ agent>"}'                                                                                             ┃
+┃       --checkout-key string          git checkout key (default "~/.ssh/id_rsa")                       ┃
+┃   -c, --config string                config file (default ".circleci/config.yml")                     ┃
+┃       --docker-socket-path string    path to the host's docker socket (default "/var/run/docker.sock" ┃
+┃ )                                                                                                     ┃
+┃   -e, --env -e VAR=VAL               set environment variables, e.g. -e VAR=VAL                       ┃
+┃   -h, --help                         help for execute                                                 ┃
+┃       --index int                    node index of parallelism                                        ┃
+┃       --node-total int               total number of parallel nodes (default 1)                       ┃
+┃       --org-id string                organization id, used when a config depends on private orbs      ┃
+┃ belonging to that org                                                                                 ┃
+┃   -o, --org-slug string              organization slug (for example: github/example-org), used when a ┃
+┃ config depends on private orbs belonging to that org                                                  ┃
+┃       --repo-url string              git URL                                                          ┃
+┃       --revision string              git revision                                                     ┃
+┃       --skip-checkout                use local path as-is (default true)                              ┃
+┃       --temp-dir string              path to local directory to store temporary config files          ┃
+┃   -v, --volume stringArray           volume bind-mounting                                             ┃
+┃                                                                                                       ┃
+┃  Global Flags:                                                                                        ┃
+┃                                                                                                       ┃
+┃       --host string         URL to your CircleCI host, also CIRCLECI_CLI_HOST (default                ┃
+┃ "https://circleci.com")                                                                               ┃
+┃       --skip-update-check   Skip the check for updates check run before every command.                ┃
+┃       --token string        your token for using CircleCI, also CIRCLECI_CLI_TOKEN                    ┃
+┃                                                                                                       ┃
+┃                                                                                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+---
+
 ### CircleCI について
 世界最高のソフトウェア チームは、CircleCI を使用して自信を持って高品質のコードを提供します。
 
