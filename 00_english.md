@@ -7,6 +7,11 @@
 ```
 ---
 ```
+Find the most effective state in each movement
+Order something difficult for anybody to accomplish
+If repeated sit-ups are effective, do them lying down.
+If I had found this, I wouldn't have bought a new one.
+A large amount of English composition must be effective
 
 ```
 ---
