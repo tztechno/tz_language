@@ -7,6 +7,18 @@
 ```
 ---
 ```
+```
+---
+```
+```
+---
+```
+Could not reliably determine the server's fully qualified domain name. 
+Set the 'ServerName' directive globally to suppress this message.
+Apache/2.4.54 (Debian) PHP/7.4.33 configured -- resuming normal operations
+```
+---
+```
 Find the most effective state in each movement
 Order something difficult for anybody to accomplish
 If repeated sit-ups are effective, do them lying down.
