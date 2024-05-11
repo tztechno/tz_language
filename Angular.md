@@ -3,6 +3,45 @@
 
 ---
 
+
+Angularで異なるコンポーネントを統合する方法についてですね。Angularでは、異なるコンポーネントを一体化するために、主に2つの方法を使用します。
+
+### ルーティング（Routing）: 
+Angularのルーターを使用して、異なるコンポーネントを特定のURLパスにリンクします。これにより、異なるページや部分的なビューを表示することができます。例えば、headerコンポーネントを/headerパスにリンクし、indexページでそれを表示することができます。
+
+```
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+
+const routes: Routes = [
+  { path: 'header', component: HeaderComponent },
+  { path: '', component: HomeComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+### コンポーネントの直接呼び出し: 
+Angularのコンポーネントは、別のコンポーネント内で直接呼び出すことができます。これを利用して、indexページの親コンポーネントから子コンポーネント（headerなど）を呼び出すことができます。
+
+```
+<!-- index.html -->
+<app-header></app-header>
+<router-outlet></router-outlet>
+```
+
+このようにして、Angularアプリケーション内で異なるコンポーネントを一体化し、indexページにリンクすることができます。
+
+---
+
 Angular.jsは、Googleが開発したJavaScriptフレームワークです。これは、単一ページアプリケーション（SPA）を構築するためのツールとして利用されます。
 
 Angular.jsは、MVC（Model-View-Controller）アーキテクチャの考え方に基づいており、アプリケーションのロジックとUIを分離することができます。
