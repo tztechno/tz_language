@@ -14,8 +14,8 @@
 ```
 ---
 ```
-train_person_1_feats_1: Agrupa los datos de train_person_1 por "case_id" y realiza una agregación específica. 
-train_person_1_feats_1: Groups the data from train_person_1 by "case_id" and performs specific aggregation. 
+Agrupa los datos de train_person_1 por "case_id" y realiza una agregación específica. 
+Groups the data from train_person_1 by "case_id" and performs specific aggregation. 
 ```
 ---
 ```
