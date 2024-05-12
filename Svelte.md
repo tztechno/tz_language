@@ -1,5 +1,16 @@
+
 # Svelte
 ### 
+
+---
+
+https://developer.mozilla.org/ja/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started
+
+https://learn.svelte.jp/tutorial/welcome-to-svelte
+
+https://zenn.dev/k_sato/books/b868c1705b8337
+
+https://reffect.co.jp/svelte/svelte-tutorial
 
 ---
 
