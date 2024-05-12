@@ -2,6 +2,57 @@
 # Svelte
 ### 
 
+
+
+---
+
+
+Svelteでexportを使用すると、コンポーネント内のデータや関数を外部で使えるようにすることができます。以下にいくつかの使い方を示します。
+
+変数のエクスポート:
+```
+<script>
+  export let name = 'John';
+</script>
+```
+<!-- 外部で変数を使用 -->
+```
+<p>Hello {name}!</p>
+```
+関数のエクスポート:
+```
+<script>
+  export function greet(name) {
+    return `Hello, ${name}!`;
+  }
+</script>
+
+<!-- 外部で関数を使用 -->
+
+<script>
+  import { greet } from './Component.svelte';
+  
+  const greeting = greet('John');
+  console.log(greeting); // "Hello, John!"
+</script>
+```
+複数の変数や関数をエクスポート:
+```
+<script>
+  let name = 'John';
+  let age = 30;
+  
+  function greet() {
+    return `Hello, ${name}! You are ${age} years old.`;
+  }
+  
+  // 外部でエクスポート
+  export { name, age, greet };
+</script>
+```
+これらの例では、exportキーワードを使用してコンポーネント内のデータや関数を外部で利用できるようにしています。外部で利用するには、importステートメントを使ってコンポーネントをインポートする必要があります。
+
+
 ---
 
 https://developer.mozilla.org/ja/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started
