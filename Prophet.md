@@ -1,6 +1,14 @@
 # Prophet
 ### 
 
+---
+
+Prophetの最新バージョンでは、date列をnumpy.datetimeまたはpandas.DatetimeIndexに直接変換できるようになり、date列に.astype(np.float)を適用する必要がなくなりました。
+
+過去のバージョンでは、Prophetが内部的にdateを数値に変換する際に問題があり、date列に.astype(np.float)を適用する必要がありました。しかし、この処理がオーバーフローエラーを引き起こすことがありました。
+
+この問題は、Prophet 1.0のリリース(2021年3月)で解決されています。最新バージョンのProphetでは、以下のように日付データを直接渡せます:
+
 
 ---
 
