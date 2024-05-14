@@ -1,9 +1,22 @@
 
-
-
 ---
 ```
-
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+TypeError:
+Implicit conversion to a host NumPy array via __array__ is not allowed,
+To explicitly construct a GPU matrix, consider using .to_cupy()
+To explicitly construct a host matrix, consider using .to_numpy().
 ```
 ---
 ```
