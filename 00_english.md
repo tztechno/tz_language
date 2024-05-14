@@ -10,6 +10,9 @@
 ```
 ---
 ```
+TypeError:
+Implicit conversion to a NumPy array is not allowed.
+Please use `.get()` to construct a NumPy array explicitly.
 ```
 ---
 ```
