@@ -10,6 +10,14 @@
 ```
 ---
 ```
+```
+---
+```
+Could not find a production build in the '.next' directory.
+Try building your app with 'next build' before starting the production server.
+```
+---
+```
 TypeError:
 Implicit conversion to a NumPy array is not allowed.
 Please use `.get()` to construct a NumPy array explicitly.
