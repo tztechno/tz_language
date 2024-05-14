@@ -3,6 +3,27 @@
 
 ---
 
+Reactアプリケーションのディレクトリには、以下のような構造が作成されます：
+
+```
+my-app/
+├── node_modules/
+├── public/
+├── src/
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   └── serviceWorker.js
+├── .gitignore
+├── package.json
+├── README.md
+└── yarn.lock
+```
+
+---
+
 Reactをインストールする前に、Node.jsとnpmをインストールする必要があります。
 
 ### Node.jsのインストール
