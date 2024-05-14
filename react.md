@@ -7,7 +7,7 @@ Reactをインストールする前に、Node.jsとnpmをインストールす�
 
 ### Node.jsのインストール
 
-Node.jsの公式サイト(https://nodejs.org/en/)にアクセスします。
+Node.jsの公式サイト( https://nodejs.org/en/ )にアクセスします。
 ご利用のOSに合わせた推奨バージョンのNode.jsをダウンロードします。
 ダウンロードしたインストーラーを実行し、指示に従ってNode.jsをインストールします。
 
