@@ -13,7 +13,8 @@ only Series and DataFrame objs are valid
 ```
 ---
 ```
-America isn’t the world. Inoue is cooking every top fighter at any division he’s in.
+America isn’t the world.
+Inoue is cooking every top fighter at any division he’s in.
 ```
 ---
 ```
