@@ -7,7 +7,9 @@
 ```
 ---
 ```
-TypeError: cannot concatenate object of type '<class 'cudf.core.dataframe.DataFrame'>'; only Series and DataFrame objs are valid
+TypeError:
+cannot concatenate object of type '<class 'cudf.core.dataframe.DataFrame'>'
+only Series and DataFrame objs are valid
 ```
 ---
 ```
