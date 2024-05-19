@@ -10,7 +10,26 @@
 ```
 ---
 ```
-
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+Nunca he visto a un luchador un boxeador tan talentoso.
+I have never seen a fighter such a talented boxer.
 ```
 ---
 ```
