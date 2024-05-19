@@ -7,6 +7,7 @@
 ```
 ---
 ```
+Earned Run Average (ERA) is a key statistic in baseball that measures a pitcher's effectiveness at preventing earned runs, which are runs scored without the benefit of errors or passed balls by the defense. It is calculated by taking the number of earned runs a pitcher allows, multiplying that by nine (the number of innings in a standard game), and then dividing by the number of innings pitched. 
 ```
 ---
 ```
