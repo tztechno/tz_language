@@ -1,10 +1,115 @@
 
+### 
 # Laravel
 ### 
 
-
+---
 
 ---
+
+---
+
+---
+
+Laravelでの使用例
+LaravelでParsedownを使用する場合も、基本的な手順は同じです。以下は、Laravelコントローラ内でParsedownを使用する例です。
+
+### Parsedownのインストール:
+
+```
+composer require erusev/parsedown
+```
+
+### コントローラでの使用:
+
+```
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Parsedown;
+
+class MarkdownController extends Controller
+{
+    public function show()
+    {
+        $parsedown = new Parsedown();
+        $markdownText = "# Hello, Laravel!\n\nThis is a paragraph with *italic* and **bold** text.";
+        $html = $parsedown->text($markdownText);
+
+        return view('markdown', ['content' => $html]);
+    }
+}
+```
+
+### ビューでの表示 (resources/views/markdown.blade.php):
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markdown Example</title>
+</head>
+<body>
+    {!! $content !!}
+</body>
+</html>
+```
+
+上記の例では、MarkdownテキストをParsedownでHTMLに変換し、その結果をBladeテンプレートで表示しています。
+
+---
+
+LaravelでMarkdownを表示するには、以下のライブラリがよく使われています。
+
+### Parsedown:
+
+シンプルで高速なMarkdownパーサーです。
+インストールも簡単で、Laravelとの統合もスムーズです。
+
+composer require erusev/parsedown
+
+使用例：
+
+use Parsedown;
+
+$parsedown = new Parsedown();
+$html = $parsedown->text('# Hello, World!');
+
+### CommonMark by League:
+
+CommonMark仕様に準拠したMarkdownパーサーです。
+拡張性が高く、多機能なため、複雑なMarkdown変換が必要な場合に適しています。
+
+composer require league/commonmark
+
+使用例：
+
+
+use League\CommonMark\CommonMarkConverter;
+
+$converter = new CommonMarkConverter();
+$html = $converter->convertToHtml('# Hello, World!');
+
+### GrahamCampbell/Laravel-Markdown:
+
+Laravelフレームワーク用に設計されたMarkdownパーサーです。
+CommonMarkを内部で使用しており、簡単に統合できます。
+
+composer require graham-campbell/markdown
+設定を公開して必要に応じて編集します：
+
+
+php artisan vendor:publish --provider="GrahamCampbell\Markdown\MarkdownServiceProvider"
+
+使用例：
+
+
+use GrahamCampbell\Markdown\Facades\Markdown;
+
+$html = Markdown::convertToHtml('# Hello, World!');
+
+
+これらのライブラリは、それぞれ異なる特徴を持っているので、プロジェクトのニーズに合わせて選択すると良いでしょう。シンプルで軽量なものが良い場合はParsedown、拡張性や機能性を重視する場合はCommonMarkやGrahamCampbell/Laravel-Markdownが適しています。
 
 ---
 
