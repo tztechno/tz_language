@@ -2,6 +2,12 @@
 # Viggle
 ### 
 
+
+---
+
+https://www.youtube.com/watch?v=TC3iBsdK5EA
+
+
 ---
 
 2024年4月頃、ラッパーのLil Yachtyが登場する奇妙なミームがインターネット上で拡散しました。このミームは、AI ツール「Viggle」を使用して作成されたものであり、Yachty の顔が様々な奇妙な画像に置き換えられています。
