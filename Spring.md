@@ -70,6 +70,6 @@ public class DemoApplication {
 VS CodeのサイドバーにあるRunタブ（再生アイコン）をクリックし、DemoApplicationを選択して実行します。これにより、Spring Bootアプリケーションが起動します。
 
 ### 7. 確認
-ブラウザを開いてhttp://localhost:8080にアクセスし、アプリケーションが正しく起動していることを確認します。
+ブラウザを開いて http://localhost:8080 にアクセスし、アプリケーションが正しく起動していることを確認します。
 
 ---
