@@ -3,6 +3,10 @@
 ### 
 
 ---
+
+https://docs.pydantic.dev/fastui/
+
+---
 by Copilot
 
 FastUIは、PythonでWebアプリケーションのユーザーインターフェース（UI）を定義するための新しい方法です。以下がFastUIの特徴です：
