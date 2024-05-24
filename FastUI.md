@@ -5,15 +5,15 @@
 
 ---
 
-# 質問：FastUIはPythonのWebアプリケーション開発ツールですか
+### 質問：FastUIはPythonのWebアプリケーション開発ツールですか
 
-### FastUIはPythonでWebアプリケーションのユーザーインターフェース（UI）を構築するためのライブラリです。by Gemini、正解
+FastUIはPythonでWebアプリケーションのユーザーインターフェース（UI）を構築するためのライブラリです。by Gemini、正解
 
-### FastUI はPythonのWebアプリケーション開発ツールです。by Copilot、正解
+FastUI はPythonのWebアプリケーション開発ツールです。by Copilot、正解
 
-### FastUIはSwiftのUIライブラリであり、PythonのWebアプリケーション開発ツールではありません。by Claude、間違い
+FastUIはSwiftのUIライブラリであり、PythonのWebアプリケーション開発ツールではありません。by Claude、間違い
 
-### FastUIはPythonのWebアプリケーション開発ツールとして存在しません。by ChatGPT、間違い
+FastUIはPythonのWebアプリケーション開発ツールとして存在しません。by ChatGPT、間違い
 
 ---
 
