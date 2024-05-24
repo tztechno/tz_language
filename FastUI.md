@@ -2,6 +2,11 @@
 # FastUI
 ### 
 
+
+---
+```
+pip install fastui
+```
 ---
 
 FastUI の本質は、ユーザー インターフェイスを定義できる、一致するPydanticモデルと TypeScript インターフェイスのセットです。このインターフェイスは、ビルド時に TypeScript と pyright/mypy によって検証され、実行時には Pydantic によって検証されます。
