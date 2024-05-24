@@ -5,8 +5,11 @@
 
 ---
 
+FastUIはSwiftのUIライブラリであり、PythonのWebアプリケーション開発ツールではありません。
 
-FastUIとFastAPIは、どちらもPythonでWebアプリケーション開発に使用されるツールですが、それぞれ異なる目的と役割を持っています。
+---
+
+FastUIとFastAPIは、どちらもPythonでWebアプリケーション開発に使用されるツールです。
 
 ### FastUI 
 は、Webアプリケーションの**ユーザーインターフェース（UI）**を構築するためのライブラリです。Pydanticモデルを使用してUIコンポーネントを定義し、宣言的なPythonコードでUIレイアウトを記述できます。FastUIを使用すると、JavaScriptを記述することなく、迅速かつ簡単にUIを構築できます。
