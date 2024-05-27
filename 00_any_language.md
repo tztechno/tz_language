@@ -22,6 +22,14 @@
 ```
 ---
 ```
+18 людей загинули в результаті торнадо.
+လေဆင်နှာမောင်း တိုက်ခတ်မှုကြောင့် လူ ၁၈ ဦး သေဆုံးခဲ့သည်။
+18 άνθρωποι έχασαν τη ζωή τους από ύποπτους ανεμοστρόβιλους.
+18 persone sono morte dopo sospetti tornado.
+18 Menschen sind nach mutmaßlichen Tornados gestorben.
+18 personnes sont mortes suite à des tornades présumées.
+18 personas han muerto tras presuntos tornados.
+18 people are dead after suspected tornadoes.
 ```
 ---
 ```
