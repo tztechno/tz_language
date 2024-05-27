@@ -63,6 +63,14 @@
 ```
 ---
 ```
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[8], line 3
+      1 y_pred = automl.predict(X_test)
+      2 accuracy = sum(y_pred == y_test) / len(y_test)
+----> 3 print(f"Accuracy: {accuracy:.4f}")
+
+TypeError: unsupported format string passed to numpy.ndarray.__format__
 ```
 ---
 ```
