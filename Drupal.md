@@ -4,8 +4,9 @@
 
 ---
 
-- aptが使えない
-- dupalがinstallできない
+- aptが使えない?
+- dupalがinstallできない?
+- mysqlがinstallできない?
 
 ---
 ```
