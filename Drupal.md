@@ -3,6 +3,19 @@
 ###
 
 ---
+
+- javaがinstallされない
+- aptが使えない
+- dupalがinstallできない
+
+---
+```
+% sudo apt update
+```
+The operation couldn’t be completed. Unable to locate a Java Runtime that supports apt.
+Please visit http://www.java.com for information on installing Java.
+
+---
 ```
 % java --version
 java 21 2023-09-19 LTS
