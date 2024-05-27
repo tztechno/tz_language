@@ -25,20 +25,15 @@
 ```
 ---
 ```
+Jego biała koszula zrobiła się czarna.
+Shati lake jeupe lilikuwa limegeuka kuwa jeusi.
+La sua camicia bianca era diventata nera.
+Hans vita skjorta hade blivit svart.
+Hvíta skyrtan hans var orðin svört.
+Kaos putihe wis dadi ireng.
+Chiếc áo sơ mi trắng của anh đã chuyển sang màu đen.
+Su camisa blanca se había vuelto negra.
+His white shirt had turned black.
 ```
 ---
-```
-Nunca he visto a un luchador un boxeador tan talentoso.
-I have never seen a fighter such a talented boxer.
-```
----
-```
-Agrupa los datos de train_person_1 por "case_id" y realiza una agregación específica. 
-Groups the data from train_person_1 by "case_id" and performs specific aggregation. 
-```
----
-```
-Sí, puedes usar math.Sqrt en GoLang para calcular la raíz cuadrada.
-Yes, you can use math.Sqrt in GoLang to calculate the square root.
-```
----
+
