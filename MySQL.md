@@ -2,6 +2,18 @@
 # MySQL
 ###
 
+
+---
+
+```
+% mysql.server start
+```
+zsh: command not found: mysql.server
+```
+% mysql -- version
+```
+zsh: command not found: mysql
+
 ---
 
 MySQLを最新バージョンにアップデートするには、以下の手順に従います。
