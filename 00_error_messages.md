@@ -1,6 +1,8 @@
+
 ###
 # error messages 
 ###
+
 
 ---
 ```
@@ -46,6 +48,26 @@
 ```
 ---
 ```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+The operation couldn’t be completed. Unable to locate a Java Runtime that supports apt.
+Please visit http://www.java.com for information on installing Java.
 ```
 ---
 ```
