@@ -2,7 +2,13 @@
 # Drupal
 ###
 
-
+---
+```
+% java --version
+java 21 2023-09-19 LTS
+Java(TM) SE Runtime Environment (build 21+35-LTS-2513)
+Java HotSpot(TM) 64-Bit Server VM (build 21+35-LTS-2513, mixed mode, sharing)
+```
 ---
 
 PHPとDrupalの環境をインストールする方法はいくつかありますが、最も一般的な方法の一つは以下の手順です。
