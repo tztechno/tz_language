@@ -16,6 +16,10 @@
 ```
 ---
 ```
+El gobierno está avisando a la empresa.
+The government is putting the company on notice. 
+El gobierno japonés está avisando a Japan Airlines después de una serie de incidentes.
+The Japanese government is putting Japan Airlines on notice after a string of incidents. 
 ```
 ---
 ```
