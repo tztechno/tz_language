@@ -19,6 +19,9 @@
 ```
 ---
 ```
+Con los precios del bitcoin rompiendo nuevos récords en los últimos meses, las peleas por el uso de energía y el impacto ambiental de la criptomoneda están aumentando en todo Estados Unidos.
+ここ数カ月間、ビットコインの価格が新記録を更新する中、仮想通貨のエネルギー使用量と環境への影響をめぐる争いが全米で激化している。
+With bitcoin prices breaking new records in recent months, fights over the cryptocurrency's energy usage and environmental impact are escalating across the United States. 
 ```
 ---
 ```
