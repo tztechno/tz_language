@@ -57,6 +57,9 @@
 ```
 ---
 ```
+----- Error --------------------------------------------------------------------
+Type:     clojure.lang.ExceptionInfo
+Message:  EOF while reading
 ```
 ---
 ```
