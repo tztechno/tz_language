@@ -54,6 +54,17 @@
 ```
 ---
 ```
+Main.c: In function ‘main’:
+Main.c:6:8: error: expected identifier or ‘(’ before ‘[’ token
+    6 |     int[]L=[2,1];
+      |        ^
+Main.c:8:9: error: ‘L’ undeclared (first use in this function)
+    8 |         L.add(L[i-2]+L[i-1]);
+      |         ^
+Main.c:8:9: note: each undeclared identifier is reported only once for each function it appears in
+Main.c:4:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+    4 |     scanf("%d", &N);
+      |     ^~~~~~~~~~~~~~~
 ```
 ---
 ```
