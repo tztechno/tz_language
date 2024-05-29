@@ -13,8 +13,49 @@
 ```
 ---
 ```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+Hii ni bei gani?
+¿Cuánto cuesta este?
+Скільки це коштує?
+Bu ne kadar?
+How much is this?
+```
+---
+```
+Kapanış argümanları
+Заключні аргументи
+Argumentos finales
+Avslutningsargument
+Closing arguments 
+トランプ口止め料裁判、最終弁論終了
+Closing arguments wrap in Trump hush money trial
+```
+---
+```
 Ο τρέχων ρυθμός του Snuke δίνεται ως x.
-Snuke 的当前速率为 x。
 Tỷ lệ hiện tại của Snuke được đưa ra là x.
 Текущата скорост на Snuke е дадена като x.
 La tasa actual de Snuke se expresa como x.
