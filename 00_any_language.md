@@ -13,6 +13,12 @@
 ```
 ---
 ```
+Ο τρέχων ρυθμός του Snuke δίνεται ως x.
+Snuke 的当前速率为 x。
+Tỷ lệ hiện tại của Snuke được đưa ra là x.
+Текущата скорост на Snuke е дадена като x.
+La tasa actual de Snuke se expresa como x.
+Snuke's current rate is given as x.
 ```
 ---
 ```
