@@ -60,6 +60,8 @@
 ```
 ---
 ```
+fatal.nim(54)            sysFatal
+Error: unhandled exception: index 1 not in 0 .. 0 [IndexDefect]
 ```
 ---
 ```
