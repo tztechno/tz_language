@@ -45,6 +45,8 @@
 ```
 ---
 ```
+% dotnet run
+Couldn't find a project to run. Ensure a project exists in /Users/shun_ishii/DockerProjects/pj2/MyApp, or pass the path to the project using --project.
 ```
 ---
 ```
