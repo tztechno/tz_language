@@ -42,6 +42,8 @@
 ```
 ---
 ```
+% go get -u io/fs
+package io/fs: unrecognized import path "io/fs" (import path does not begin with hostname)
 ```
 ---
 ```
