@@ -34,6 +34,10 @@
 ```
 ---
 ```
+No veo a Altman apareciendo en su puerta con dinero en efectivo,
+aunque es probable que estas publicaciones ya estén en los datos de entrenamiento.
+I do not see Altman turning up at their door with cash,
+though these publications are also likely already in the training data.
 ```
 ---
 ```
