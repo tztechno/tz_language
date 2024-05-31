@@ -28,6 +28,8 @@
 ```
 ---
 ```
+Japan Tobacco siembra semillas para un futuro diversificado
+Japan Tobacco sows seeds for a diversified future
 ```
 ---
 ```
