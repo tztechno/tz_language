@@ -31,6 +31,10 @@
 ```
 ---
 ```
+Nissan ha negado las acusaciones de que siguió tratando injustamente a sus proveedores.
+incluso después de recibir una advertencia de la Comisión de Comercio Justo.
+Nissan has denied allegations that it continued to treat suppliers unfairly
+even after it received a warning from the Fair Trade Commission.
 ```
 ---
 ```
