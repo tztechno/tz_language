@@ -1,6 +1,36 @@
 ###
 # HomePageDesign
-###
+### 
+
+---
+はい、HTMLのデザインテンプレートはたくさんあります。一般的に使われているものを紹介しますね。
+
+### HTML5 Boilerplate
+https://html5boilerplate.com/
+
+HTML5 Boilerplateは、モダンなウェブサイトの基盤となるHTMLテンプレートです。最新のベストプラクティスに従って構築されており、パフォーマンス、アクセシビリティ、クロスブラウザ対応などを考慮しています。
+
+### Bootstrap
+https://getbootstrap.com/
+
+Bootstrapは、TwitterによるレスポンシブWebデザインフレームワークです。CSSやJavaScriptのコンポーネントが豊富に用意されており、すぐにレスポンシブでスタイリッシュなWebサイトを作ることができます。
+
+### Foundation
+https://get.foundation/
+
+FoundationもレスポンシブWebデザインのためのCSSフレームワークです。Bootstrapと同様にコンポーネントが多数用意されており、モバイルファーストのアプローチを採用しています。
+
+### Bulma
+https://bulma.io/
+
+Bulmaは、モダンなCSSフレームワークです。シンプルで使いやすく、レスポンシブ対応で、カスタマイズも容易です。
+
+### Skeleton
+http://getskeleton.com/
+
+Skeletonは、シンプルで軽量なボイラープレートです。余分な記述がなく、最小限のCSSスタイリングが行われています。
+これらのテンプレートを使うと、HTMLやCSSの構造が事前に用意されているので、手早くWebサイトを作ることができます。デザインの選択肢も広がり、レスポンシブ対応やクロスブラウザ対応も考慮されています。
+
 
 ---
 ```
