@@ -25,6 +25,8 @@
 ```
 ---
 ```
+You're welcome! I'm glad to hear it worked.
+If you have any more questions or need further assistance with jq or anything else, feel free to ask!
 ```
 ---
 ```
