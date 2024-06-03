@@ -1,0 +1,19 @@
+###
+# Bootstrap
+###
+
+---
+
+UIコンポーネントについては、Bootstrapが提供するCSSスタイリングとJavaScriptプラグインで構成されています。つまり、Bootstrapは自身のJavaScriptプラグインを内包しているのです。
+ですので、JavaScriptで実装したUIコンポーネントについては、その機能的な部分をBootstrapのJavaScriptプラグインとCSSで置き換えることで、Bootstrap化が可能だと考えられます。
+具体的な例を挙げると、
+
+ボタンやモーダルウィンドウなどはBootstrapのコンポーネントに置き換え可能
+アコーディオンメニューなども、Bootstrapが提供するコラプスプラグインで実装できる
+カルーセル/スライダーもBootstrapに準拠したコンポーネントがある
+
+このように、UIコンポーネントについてはBootstrapが網羅しているため、JavaScriptで作ったものをBootstrap製のコンポーネントで置き換えることができます。
+ただし、高度な独自の機能を持ったコンポーネントについては、Bootstrap化が難しい場合もあります。しかし、UIの見た目の部分に関してはBootstrapのCSSで統一できる可能性が高いです。
+つまり、UIコンポーネントに関してはJavaScriptの実装をBootstrap製のコンポーネントで置き換えて、Bootstrap化することが可能だと言えるでしょう。
+
+---
