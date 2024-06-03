@@ -22,6 +22,17 @@
 ```
 ---
 ```
+hoeveel kos dit?
+hversu mikið er þetta?
+sa kushton kjo?
+Cé mhead atá sé?
+колькі гэта каштуе?
+Kuinka paljon tämä maksaa?
+πόσο κοστίζει αυτό?
+hoeveel is dit?
+kolik to je?
+¿Cuánto cuesta este?
+how much is this?
 ```
 ---
 ```
