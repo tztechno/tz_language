@@ -19,6 +19,14 @@
 ```
 ---
 ```
+Hej Verden
+ওহে বিশ্ব
+Chào thế giới
+Hallo Wereld
+Ahoj světe
+Moien Welt
+Salut Lume
+Hello World
 ```
 ---
 ```
