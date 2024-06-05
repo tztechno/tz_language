@@ -16,6 +16,19 @@
 ```
 ---
 ```
+Hallo Welt
+Pozdrav svijete
+Ciao mondo
+Ahoj svet
+Ahoj světe
+Hei maailma
+Hej världen
+Здравей свят
+Bonjour le monde
+Γειά σου Κόσμε
+Halló heimur
+Hej Verden
+Hello World
 ```
 ---
 ```
