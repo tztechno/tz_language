@@ -10,6 +10,12 @@
 ```
 ---
 ```
+Hallo Wereld
+Tere, Maailm
+Привіт Світ
+Helo Byd
+Halo Dunia
+Hello World
 ```
 ---
 ```
