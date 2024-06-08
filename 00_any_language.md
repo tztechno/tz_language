@@ -13,6 +13,12 @@
 ```
 ---
 ```
+Ciao mondo
+Përshendetje Botë
+ሰላም ልዑል
+Hello Wêreld
+Halló heimur
+Hello World
 ```
 ---
 ```
