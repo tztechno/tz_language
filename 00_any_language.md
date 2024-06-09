@@ -29,7 +29,13 @@
 ```
 ---
 ```
-
+Не знам.
+No sé.
+Не знам.
+Abdi henteu terang.
+Sijui.
+Neviem.
+I don't know.
 ```
 ---
 ```
