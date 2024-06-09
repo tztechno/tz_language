@@ -1,9 +1,55 @@
 
 ---
 ```
+
 ```
 ---
 ```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+Jag gillar det inte.
+No me gusta.
+Ich mag es nicht.
+I do not like it.
+```
+---
+```
+Ich mag das.
+Me gusta eso.
+Me gusta.
+Jag gillar det.
+මම එයට කැමතියි.
+Aku seneng.
+Sviđa mi se.
+ខ្ញុំ​ចូលចិត្ត​វា។
+મને તે ગમે છે.
+I like it.
 ```
 ---
 ```
@@ -76,36 +122,6 @@ kolik to je?
 how much is this?
 ```
 ---
-```
-You're welcome! I'm glad to hear it worked.
-If you have any more questions or need further assistance with jq or anything else, feel free to ask!
-```
----
-```
-Japan Tobacco siembra semillas para un futuro diversificado
-Japan Tobacco sows seeds for a diversified future
-```
----
-```
-Nissan ha negado las acusaciones de que siguió tratando injustamente a sus proveedores.
-incluso después de recibir una advertencia de la Comisión de Comercio Justo.
-Nissan has denied allegations that it continued to treat suppliers unfairly
-even after it received a warning from the Fair Trade Commission.
-```
----
-```
-No veo a Altman apareciendo en su puerta con dinero en efectivo,
-aunque es probable que estas publicaciones ya estén en los datos de entrenamiento.
-I do not see Altman turning up at their door with cash,
-though these publications are also likely already in the training data.
-```
----
-```
-Hii ni bei gani?
-¿Cuánto cuesta este?
-Скільки це коштує?
-Bu ne kadar?
-How much is this?
-```
----
+
+
 
