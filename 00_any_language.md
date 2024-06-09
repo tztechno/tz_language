@@ -7,6 +7,14 @@
 ```
 ---
 ```
+Es hat ein Erdbeben stattgefunden.
+Se produjo un terremoto.
+Έγινε σεισμός.
+ಭೂಕಂಪ ಸಂಭವಿಸಿದೆ.
+Ocorreu un terremoto.
+Es va produir un terratrèmol.
+Bir deprem meydana geldi.
+An earthquake occurred.
 ```
 ---
 ```
