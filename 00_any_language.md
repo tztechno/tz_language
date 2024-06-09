@@ -25,7 +25,10 @@
 ```
 ---
 ```
-
+Je viens du Japon.
+Я из Японии.
+Soy de Japón.
+I'm from Japan.
 ```
 ---
 ```
