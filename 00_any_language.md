@@ -21,7 +21,16 @@
 ```
 ---
 ```
-
+Ich bin Japaner
+Jeg er japaner
+నేను జపనీస్
+Jsem Japonec
+நான் ஜப்பானியன்
+Japanese ako
+ฉันเป็นคนญี่ปุ่น
+я японец
+soy japonés
+je suis Japonais
 ```
 ---
 ```
