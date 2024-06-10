@@ -17,7 +17,10 @@
 ```
 ---
 ```
-
+Vemos una imagen con las coincidencias de puntos característicos visualizadas.
+Vi ser en bild med funktionen punktmatchningar visualiserade.
+Wir sehen ein Bild mit dem visualisierten Feature-Matching-Punkt.
+We see an image with the feature point matches visualized.
 ```
 ---
 ```
