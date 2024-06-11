@@ -27,7 +27,7 @@
 ```
 ---
 ```
-
+Fatal error: Uncaught Laminas\ModuleManager\Exception\RuntimeException: Module (Blog) could not be initialized. in /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-modulemanager/src/ModuleManager.php:180 Stack trace: #0 /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-modulemanager/src/ModuleManager.php(154): Laminas\ModuleManager\ModuleManager->loadModuleByName(Object(Laminas\ModuleManager\ModuleEvent)) #1 /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-modulemanager/src/ModuleManager.php(76): Laminas\ModuleManager\ModuleManager->loadModule('Blog') #2 /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-eventmanager/src/EventManager.php(319): Laminas\ModuleManager\ModuleManager->onLoadModules(Object(Laminas\ModuleManager\ModuleEvent)) #3 /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-eventmanager/src/EventManager.php(169): Laminas\EventManager\EventManager->triggerListeners(Object(Laminas\ModuleManager\ModuleEvent)) #4 /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-modulemanager/src/ModuleManager.php(99): Laminas\EventManager\EventManager->triggerEvent(Object(Laminas\ModuleManager\ModuleEvent)) #5 /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-mvc/src/Application.php(251): Laminas\ModuleManager\ModuleManager->loadModules() #6 /Users/shun_ishii/Projects/pj3/myapp/config/container.php(14): Laminas\Mvc\Application::init(Array) #7 /Users/shun_ishii/Projects/pj3/myapp/public/index.php(33): require('/Users/shun_ish...') #8 {main} thrown in /Users/shun_ishii/Projects/pj3/myapp/vendor/laminas/laminas-modulemanager/src/ModuleManager.php on line 180
 ```
 ---
 ```
@@ -63,34 +63,6 @@ help: consider `await`ing on the `Future` and calling the method on its `Output`
 Some errors have detailed explanations: E0432, E0599.
 For more information about an error, try `rustc --explain E0432`.
 error: could not compile `my_proj` (bin "my_proj") due to 2 previous errors
-```
----
-```
-ValueError: Input X contains NaN.
-ExtraTreesClassifier does not accept missing values encoded as NaN natively.
-For supervised learning, you might want to consider sklearn.ensemble.
-HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively.
-Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values.
-See https://scikit-learn.org/stable/modules/impute.html
-You can find a list of all estimators that handle NaN values at the following page:
-https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
-```
----
-```
-% go get -u io/fs
-package io/fs: unrecognized import path "io/fs" (import path does not begin with hostname)
-```
----
-```
-% dotnet run
-Couldn't find a project to run. Ensure a project exists in /Users/shun_ishii/DockerProjects/pj2/MyApp, or pass the path to the project using --project.
-```
----
-```
-Main.c: In function ‘main’:
-Main.c:5:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
-    5 |     scanf("%d", &N);
-      |     ^~~~~~~~~~~~~~~
 ```
 ---
 
