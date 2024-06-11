@@ -13,7 +13,13 @@
 ```
 ---
 ```
-
+magnitudea zortzikoa da.
+girmansa takwas ne.
+størrelsen er åtte.
+परिमाण आठ छ।
+büyüklüğü sekizdir.
+la magnitud es ocho.
+the magnitude is 8.
 ```
 ---
 ```
