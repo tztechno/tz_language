@@ -5,11 +5,21 @@
 ```
 ---
 ```
-
+yksi kaksi kolme neljä viisi kuusi
+un deux trois quatre cinq six
+uno dos tres CUATRO CINCO SEIS
+one two three four five six
 ```
 ---
 ```
-
+Quiero intentarlo.
+Je veux l'essayer.
+Haluan kokeilla sitä.
+मुझे यह आजमाना है!
+ਮੈਂ ਇਸਨੂੰ ਅਜ਼ਮਾਉਣਾ ਚਾਹੁੰਦਾ ਹਾਂ।
+ki akarom próbálni.
+Tôi muốn thử nó.
+I want to try it.
 ```
 ---
 ```
