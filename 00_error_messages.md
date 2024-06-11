@@ -30,6 +30,9 @@
 ```
 ---
 ```
+# atcoder.jp/golang
+./main.go:13:9: err declared and not used
+./main.go:13:29: cannot use r (variable of type rune) as string value in argument to strconv.Atoi
 ```
 ---
 ```
