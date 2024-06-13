@@ -26,11 +26,37 @@
 ```
 ---
 ```
-
+Aku nindakake perkara sing padha kaya sadurunge.
+Aku uga nindakake perkara sing padha.
+Aku nindakake perkara kasebut.
+Aku nglakoni.
+Nglakoni.
+Ik doe hetzelfde als voorheen.
+Ik doe hetzelfde.
+Ik doe het ding.
+Ik doe het.
+Doe het.
+Hago lo mismo que antes.
+Hago lo mismo.
+Yo hago la cosa.
+Lo hago.
+Hazlo.
+I do the same thing as before.
+I do the same thing.
+I do the thing. 
+I do it.
+Do it.
 ```
 ---
 ```
-
+Hago lo mismo que antes.
+ငါအရင်ကလိုပါပဲ။
+Saya melakukan perkara yang sama seperti sebelum ini.
+ഞാൻ മുമ്പത്തെ അതേ കാര്യം തന്നെ ചെയ്യുന്നു.
+मी पूर्वीप्रमाणेच करतो.
+Правя същото като преди.
+Eu faço a mesma coisa de antes.
+I do the same thing as before.
 ```
 ---
 ```
@@ -174,31 +200,7 @@ Hej Verden
 Hello World
 ```
 ---
-```
-Hej Verden
-ওহে বিশ্ব
-Chào thế giới
-Hallo Wereld
-Ahoj světe
-Moien Welt
-Salut Lume
-Hello World
-```
----
-```
-hoeveel kos dit?
-hversu mikið er þetta?
-sa kushton kjo?
-Cé mhead atá sé?
-колькі гэта каштуе?
-Kuinka paljon tämä maksaa?
-πόσο κοστίζει αυτό?
-hoeveel is dit?
-kolik to je?
-¿Cuánto cuesta este?
-how much is this?
-```
----
+
 
 
 
