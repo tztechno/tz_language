@@ -3,6 +3,166 @@
 ###
 
 
+---
+
+Blazor WebAssembly アプリケーション（`myapp`）と ASP.NET Core API を連携させるためには、以下の手順を実行する必要があります。
+
+### 手順概要
+
+1. **ASP.NET Core API の作成と設定**
+   - ASP.NET Core で RESTful API を作成します。これには、GET や POST メソッドを含むエンドポイントが必要です。
+   - CORS (Cross-Origin Resource Sharing) を設定して、Blazor WebAssembly アプリケーションから API にアクセスできるようにします。
+
+2. **Blazor WebAssembly アプリケーションから API へのアクセス**
+   - Blazor WebAssembly アプリケーション内で、HttpClient を使用して API にリクエストを送信します。
+   - API からの応答を処理し、必要な情報を画面に表示します。
+
+### 詳細な手順
+
+#### 1. ASP.NET Core API の作成と設定
+
+まず、ASP.NET Core で API を作成します。以下は、簡単な例です。
+
+- **Startup.cs**:
+  ```csharp
+  using Microsoft.AspNetCore.Builder;
+  using Microsoft.AspNetCore.Hosting;
+  using Microsoft.Extensions.Configuration;
+  using Microsoft.Extensions.DependencyInjection;
+  using Microsoft.Extensions.Hosting;
+
+  namespace MyApi
+  {
+      public class Startup
+      {
+          public Startup(IConfiguration configuration)
+          {
+              Configuration = configuration;
+          }
+
+          public IConfiguration Configuration { get; }
+
+          public void ConfigureServices(IServiceCollection services)
+          {
+              services.AddControllers();
+              services.AddCors(options =>
+              {
+                  options.AddPolicy("CorsPolicy",
+                      builder => builder
+                          .AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+              });
+          }
+
+          public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+          {
+              if (env.IsDevelopment())
+              {
+                  app.UseDeveloperExceptionPage();
+              }
+
+              app.UseRouting();
+
+              app.UseCors("CorsPolicy");
+
+              app.UseEndpoints(endpoints =>
+              {
+                  endpoints.MapControllers();
+              });
+          }
+      }
+  }
+  ```
+
+- **CalculateController.cs**:
+  ```csharp
+  using Microsoft.AspNetCore.Mvc;
+
+  namespace MyApi.Controllers
+  {
+      [ApiController]
+      [Route("api/[controller]")]
+      public class CalculateController : ControllerBase
+      {
+          [HttpPost]
+          public IActionResult Post([FromBody] CalculationRequest request)
+          {
+              // Perform calculations
+              int result = CalculateLucasNumber(request.N);
+
+              // Return result
+              return Ok(new
+              {
+                  Result = result,
+                  ProcessTime = 100 // Example process time in milliseconds
+              });
+          }
+
+          private int CalculateLucasNumber(int n)
+          {
+              // Implement your calculation logic here
+              // This is just a placeholder example
+              if (n == 0)
+                  return 2;
+              else if (n == 1)
+                  return 1;
+              else
+                  return CalculateLucasNumber(n - 1) + CalculateLucasNumber(n - 2);
+          }
+
+          public class CalculationRequest
+          {
+              public int N { get; set; }
+          }
+      }
+  }
+  ```
+
+#### 2. Blazor WebAssembly アプリケーションから API へのアクセス
+
+Blazor WebAssembly アプリケーションからは、`HttpClient` を使用して API にリクエストを送信します。例えば、`FetchData.razor` で以下のように実装できます。
+
+- **FetchData.razor**:
+  ```razor
+  @page "/fetchdata"
+  @using System.Net.Http
+  @inject HttpClient Http
+
+  <h3>Fetch Data</h3>
+
+  <input type="number" @bind="n" placeholder="Enter a number" />
+  <button @onclick="Calculate">Calculate</button>
+
+  <div>
+      @if (result != null)
+      {
+          <p>Lucas Number L@n = @result.Result</p>
+          <p>Time: @((double)result.ProcessTime / 1000) sec</p>
+      }
+  </div>
+
+  @code {
+      int n;
+      dynamic result;
+
+      private async Task Calculate()
+      {
+          var response = await Http.PostAsJsonAsync("http://localhost:5000/api/calculate", new { n });
+          response.EnsureSuccessStatusCode();
+          result = await response.Content.ReadFromJsonAsync<object>();
+      }
+  }
+  ```
+
+この例では、`FetchData.razor` が `http://localhost:5000/api/calculate` に対して POST リクエストを送信し、計算結果を取得して表示します。実際のアプリケーションでは、URLやリクエスト・レスポンスの形式を適切に調整してください。
+
+### 注意点
+
+- CORS を適切に設定していない場合、ブラウザが API へのアクセスをブロックする可能性があります。API サーバー側で CORS ポリシーを設定して、Blazor WebAssembly アプリケーションのオリジンを許可するようにしてください。
+- リクエストとレスポンスの形式やエラーハンドリングなど、実際のアプリケーションに合わせて適切に調整してください。
+
+これらの手順に従うことで、Blazor WebAssembly アプリケーションとサーバーサイドの ASP.NET Core API を連携させる準備が整います。
 
 ---
 
