@@ -3,6 +3,186 @@
 ###
 
 
+
+---
+
+`ajax.html` を使用して、Blazor WebAssembly アプリケーションから計算を実行し、結果を取得する方法を説明します。
+
+### Backend の準備
+
+1. **ASP.NET Core Backend の作成**
+
+   Backend として、ASP.NET Core を使用して Lucas 数の計算を行います。以下は、簡単なサンプルです。
+
+   ```csharp
+   // Startup.cs
+
+   using Microsoft.AspNetCore.Builder;
+   using Microsoft.AspNetCore.Hosting;
+   using Microsoft.Extensions.DependencyInjection;
+   using Microsoft.Extensions.Hosting;
+   using System.Diagnostics;
+   using System.Threading.Tasks;
+
+   namespace LucasNumberCalculatorBackend
+   {
+       public class Startup
+       {
+           public void ConfigureServices(IServiceCollection services)
+           {
+               services.AddControllers();
+           }
+
+           public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+           {
+               if (env.IsDevelopment())
+               {
+                   app.UseDeveloperExceptionPage();
+               }
+
+               app.UseRouting();
+
+               app.UseEndpoints(endpoints =>
+               {
+                   endpoints.MapControllers();
+               });
+           }
+       }
+   }
+   ```
+
+2. **Lucas 数の計算と時間計測**
+
+   Lucas 数を計算し、処理時間を返すコントローラーを作成します。
+
+   ```csharp
+   // Controllers/CalculateController.cs
+
+   using Microsoft.AspNetCore.Mvc;
+   using System;
+   using System.Diagnostics;
+   using System.Threading.Tasks;
+
+   namespace LucasNumberCalculatorBackend.Controllers
+   {
+       [Route("[controller]")]
+       [ApiController]
+       public class CalculateController : ControllerBase
+       {
+           [HttpPost]
+           public async Task<IActionResult> CalculateLucasNumber([FromBody] CalculateRequest request)
+           {
+               int n = request.N;
+
+               // 計算開始時間を記録
+               Stopwatch stopwatch = Stopwatch.StartNew();
+
+               // Lucas 数を計算する（ここでは簡易的な実装）
+               long result = CalculateLucas(n);
+
+               // 計算時間をミリ秒で取得
+               long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+
+               // 結果と計算時間を返す
+               var response = new
+               {
+                   result,
+                   process_time = elapsedMilliseconds
+               };
+
+               return Ok(response);
+           }
+
+           private long CalculateLucas(int n)
+           {
+               if (n == 0)
+                   return 2;
+               else if (n == 1)
+                   return 1;
+
+               long a = 2;
+               long b = 1;
+               long c = 0;
+
+               for (int i = 2; i <= n; i++)
+               {
+                   c = a + b;
+                   a = b;
+                   b = c;
+               }
+
+               return c;
+           }
+       }
+
+       public class CalculateRequest
+       {
+           public int N { get; set; }
+       }
+   }
+   ```
+
+   - `CalculateLucas` メソッドでは、Lucas 数を計算しています。
+   - `CalculateLucasNumber` アクションメソッドでは、POST リクエストを受け取り、計算結果と処理時間を JSON 形式で返します。
+
+### Frontend の準備
+
+`ajax.html` ファイルを使用して、Blazor WebAssembly アプリケーションから計算リクエストを送信し、結果を受け取る JavaScript を実装します。
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucas Number Calculator</title>
+</head>
+<body>
+    <p>AJAX Lucas Number</p>
+    <input type="number" id="inputN" placeholder="Enter a number">
+    <button onclick="sendRequest()">Calculate</button>
+    <div id="result"></div>
+    <div id="time"></div>
+
+    <script>
+        function sendRequest() {
+            const n = document.getElementById('inputN').value;
+            fetch('/calculate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ N: parseInt(n) })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('result').innerText = `Lucas Number L${n} = ${data.result}`;
+                document.getElementById('time').innerText = `Time: ${(data.process_time / 1000).toFixed(3)} sec`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+```
+
+### 動作の確認
+
+1. **ASP.NET Core アプリケーションの起動**
+
+   ASP.NET Core アプリケーションを起動し、`http://localhost:5000` でアクセス可能にします。
+
+2. **ブラウザで `ajax.html` を開く**
+
+   ブラウザで `ajax.html` を開き、数値を入力して「Calculate」ボタンをクリックすると、Blazor WebAssembly アプリケーションに対して計算リクエストが送信され、結果が表示されます。
+
+このようにして、Blazor WebAssembly アプリケーションと ASP.NET Core Backend を連携させて、Lucas 数の計算と計算時間の取得を行うことができます。
+
 ---
 
 Blazor WebAssembly アプリケーション (ここでは `MyApp` という名前のプロジェクトとして想定します) の一般的なファイル階層を示します。これは、プロジェクトの基本的な構成に基づいています。Blazor WebAssembly プロジェクトは、クライアントサイドで動作し、ASP.NET Core サーバーではなく、静的ファイルホスティングサーバーにデプロイされることが一般的です。
