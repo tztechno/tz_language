@@ -2,6 +2,68 @@
 # Blazor
 ###
 
+
+---
+
+Blazor アプリケーションのルートに `ajax.html` を置いた場合、それを表示するにはいくつかの方法があります。Blazor は基本的にサーバーサイドで動作するため、静的な HTML ファイルをそのままブラウザで表示することはできませんが、いくつかのアプローチで表示することができます。
+
+### 方法1: 静的ファイルを直接参照する方法
+
+1. **Blazor WebAssembly (クライアントサイド) の場合**:
+
+   Blazor WebAssembly の場合、静的ファイルは `wwwroot` フォルダに配置します。ただし、`wwwroot` フォルダがなくてもルートに配置することはできますが、その場合のファイルパスは異なります。
+
+   - `wwwroot` フォルダがない場合は、プロジェクトのルートに `ajax.html` を置きます。
+
+   - ブラウザで直接ファイルにアクセスする場合、例えば `http://localhost:5000/ajax.html` のように、Blazor アプリケーションのルートからのパスでアクセスします。
+
+2. **Blazor Server (サーバーサイド) の場合**:
+
+   Blazor Server の場合、静的ファイルをそのまま表示することはできませんが、Blazor アプリケーション内でファイルを参照する方法があります。
+
+   - 例えば、Blazor Server アプリケーション内の Razor ページで `<iframe>` を使用して、`ajax.html` を表示することができます。
+
+     ```html
+     <iframe src="/ajax.html" width="100%" height="600"></iframe>
+     ```
+
+     この場合、`src` 属性のパスはアプリケーションのルートからの相対パスになります。
+
+### 方法2: API 経由で表示する方法
+
+もう一つの方法として、Blazor アプリケーションで C# コードを使用して、`ajax.html` の内容を取得して表示する方法があります。これには以下の手順が必要です。
+
+1. **Blazor WebAssembly (クライアントサイド) の場合**:
+
+   - `HttpClient` を使用して、サーバーから `ajax.html` を取得し、その内容を Blazor のコンポーネントで表示します。
+
+     ```csharp
+     @page "/ajax"
+     @inject HttpClient Http
+
+     <h3>Ajax Content</h3>
+     <div>
+         @content
+     </div>
+
+     @code {
+         string content;
+
+         protected override async Task OnInitializedAsync()
+         {
+             content = await Http.GetStringAsync("/ajax.html");
+         }
+     }
+     ```
+
+   - `OnInitializedAsync` メソッドで、`HttpClient` を使用して `ajax.html` の内容を取得し、`content` 変数に格納します。その後、Blazor のコンポーネント内で `content` を表示します。
+
+2. **Blazor Server (サーバーサイド) の場合**:
+
+   - 同様に、Blazor Server でも `HttpClient` を使用してサーバーから `ajax.html` の内容を取得し、コンポーネントで表示することができます。
+
+Blazor では、静的な HTML ファイルをそのまま表示する場合よりも、データの取得や処理が必要な場合に API を介して処理する方が一般的です。以上の方法を参考に、Blazor アプリケーションで `ajax.html` を表示する方法を選択してください。
+
 ---
 
 Blazor アプリケーションの中で、静的な HTML ファイル (`ajax.html` など) をホストする方法について説明します。Blazor は基本的にサーバーサイドの Web アプリケーションですが、静的コンテンツを追加することも可能です。
