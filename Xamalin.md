@@ -4,6 +4,46 @@
 
 
 ---
+```
+
+% dotnet new xamarinforms -n myapp
+
+Welcome to .NET 8.0!
+---------------------
+SDK Version: 8.0.302
+
+Telemetry
+---------
+The .NET tools collect usage data in order to help us improve your experience. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate, run 'dotnet dev-certs https --trust'
+Learn about HTTPS: https://aka.ms/dotnet-https
+
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+An issue was encountered verifying workloads. For more information, run "dotnet workload update".
+No templates or subcommands found matching: 'xamarinforms'.
+
+To list installed templates similar to 'xamarinforms', run:
+   dotnet new list xamarinforms
+To search for the templates on NuGet.org, run:
+   dotnet new search xamarinforms
+
+
+For details on the exit code, refer to https://aka.ms/templating-exit-codes#103
+
+
+```
+---
 
 Visual Studio Code (VS Code) を使用して、Xamarin.Forms を使った C# アプリケーションを作成し、Web に "Hello, World!" を表示する方法を説明します。
 
