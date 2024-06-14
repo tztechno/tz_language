@@ -22,7 +22,15 @@
 ```
 ---
 ```
-
+你從哪裡來？
+你从哪来？
+어디서 오셨나요?
+Откуда ты?
+De unde ești?
+Iš kur tu esi?
+No kurienes tu esi?
+Unde venistis?
+Where are you from?
 ```
 ---
 ```
