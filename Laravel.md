@@ -6,6 +6,157 @@
 ---
 
 ---
+3.5
+
+Laravelを使用して簡単なブログを作成する手順を説明します。以下のステップに沿って進めてください。
+
+### 前提条件
+- PHPとComposerがインストールされていること。
+- Laravelがインストールされていること。
+
+### 手順
+
+#### 1. 新しいLaravelプロジェクトを作成する
+ターミナルまたはコマンドプロンプトを開き、次のコマンドを実行します。
+
+```bash
+composer create-project --prefer-dist laravel/laravel blog
+```
+
+`blog`という名前の新しいLaravelプロジェクトが作成されます。
+
+#### 2. データベースの設定
+`.env`ファイルを編集して、データベースの接続情報を設定します。
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+```
+
+#### 3. マイグレーションの作成
+ブログ記事を保存するためのマイグレーションファイルを作成します。
+
+```bash
+php artisan make:model Post -m
+```
+
+これにより、`database/migrations`ディレクトリに`create_posts_table.php`という名前のマイグレーションファイルと、`app/Models/Post.php`という名前のモデルファイルが作成されます。
+
+#### 4. マイグレーションファイルの編集
+`create_posts_table.php`を開いて、`posts`テーブルのスキーマを定義します。
+
+```php
+public function up()
+{
+    Schema::create('posts', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->text('content');
+        $table->timestamps();
+    });
+}
+```
+
+#### 5. データベースにマイグレーションを適用する
+次のコマンドでマイグレーションを実行します。
+
+```bash
+php artisan migrate
+```
+
+#### 6. ルーティングの設定
+`routes/web.php`ファイルに、ブログの表示および投稿のためのルートを設定します。
+
+```php
+use App\Http\Controllers\PostController;
+
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+```
+
+#### 7. コントローラの作成
+`PostController`を作成します。
+
+```bash
+php artisan make:controller PostController
+```
+
+`app/Http/Controllers/PostController.php`ファイルに以下のようにメソッドを定義します。
+
+```php
+namespace App\Http\Controllers;
+
+use App\Models\Post;
+
+class PostController extends Controller
+{
+    public function index()
+    {
+        $posts = Post::latest()->get();
+        return view('posts.index', compact('posts'));
+    }
+
+    public function show(Post $post)
+    {
+        return view('posts.show', compact('post'));
+    }
+}
+```
+
+#### 8. ビューの作成
+`resources/views`ディレクトリに、記事一覧と詳細を表示するためのビューファイルを作成します。
+
+- `resources/views/posts/index.blade.php`
+```blade
+@extends('layouts.app')
+
+@section('content')
+    <h1>ブログ一覧</h1>
+    @foreach ($posts as $post)
+        <div>
+            <h2>{{ $post->title }}</h2>
+            <p>{{ $post->content }}</p>
+            <p><a href="{{ route('posts.show', $post) }}">続きを読む</a></p>
+        </div>
+    @endforeach
+@endsection
+```
+
+- `resources/views/posts/show.blade.php`
+```blade
+@extends('layouts.app')
+
+@section('content')
+    <h1>{{ $post->title }}</h1>
+    <p>{{ $post->content }}</p>
+    <p><a href="{{ route('posts.index') }}">一覧に戻る</a></p>
+@endsection
+```
+
+#### 9. レイアウトの作成
+`resources/views/layouts/app.blade.php`を作成して、共通のレイアウトを定義します。
+
+```blade
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog</title>
+</head>
+<body>
+    <div class="container">
+        @yield('content')
+    </div>
+</body>
+</html>
+```
+
+これで、簡易的なブログを作成する準備が整いました。記事を作成するためのフォームや、記事の投稿・編集・削除機能などは、必要に応じて追加で実装していくことができます。
 
 ---
 
