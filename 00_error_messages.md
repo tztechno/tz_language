@@ -34,6 +34,14 @@
 ```
 ---
 ```
+/judge/Main.zig:43:5: error: use of undeclared identifier 'ans'
+    ans="YES";
+    ^~~
+error: a.out...
+error: The following command exited with error code 1:
+/opt/zig-linux-x86_64-0.10.1/zig build-exe /judge/Main.zig -OReleaseFast --cache-dir /judge/zig-cache --global-cache-dir /home/runner/.cache/zig --name a.out --pkg-begin string /judge/.gyro/zig-string-JakubSzark-github.com-e842e89f/pkg/zig-string.zig --pkg-end --pkg-begin ziter /judge/.gyro/ziter-Hejsil-github.com-a8aad124/pkg/ziter.zig --pkg-end --enable-cache 
+error: the following build command failed with exit code 1:
+/judge/zig-cache/o/5297450095ee08f631a822f783f9b1b0/build /opt/zig-linux-x86_64-0.10.1/zig /judge /judge/zig-cache /home/runner/.cache/zig
 ```
 ---
 ```
