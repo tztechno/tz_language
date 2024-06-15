@@ -17,6 +17,12 @@ http://localhost:1313/
 cd public
 python -m http.server
 http://0.0.0.0:8000/
+
+DEPLOY
+git init
+git remote add origin https://github.com/tztechno/tz_blog_hugo.git
+git checkout -b master
+git push -u origin master
 ```
 ---
 
