@@ -4,6 +4,7 @@
 ###
 
 ### latest
+
 ---
 ```
 ```
@@ -18,6 +19,59 @@
 ```
 ---
 ```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+Main.kt:8:11: error: expecting an element
+    int Y = Integer.parseInt(X);
+          ^
+Main.kt:8:20: error: expecting an element
+    int Y = Integer.parseInt(X);
+                   ^
+Main.kt:4:18: error: not nullable value required to call an 'iterator()' method on for-loop range
+    for (char in X) {
+                 ^
+Main.kt:5:31: error: overload resolution ambiguity: 
+public open fun getNumericValue(p0: Char): Int defined in java.lang.Character
+public open fun getNumericValue(p0: Int): Int defined in java.lang.Character
+        val digit = Character.getNumericValue(char)
+                              ^
+Main.kt:6:11: error: overload resolution ambiguity: 
+public final operator fun plus(other: Byte): Int defined in kotlin.Int
+public final operator fun plus(other: Double): Double defined in kotlin.Int
+public final operator fun plus(other: Float): Float defined in kotlin.Int
+public final operator fun plus(other: Int): Int defined in kotlin.Int
+public final operator fun plus(other: Long): Long defined in kotlin.Int
+public final operator fun plus(other: Short): Int defined in kotlin.Int
+        M += digit
+          ^
+Main.kt:8:5: error: unresolved reference: int
+    int Y = Integer.parseInt(X);
+    ^
+Main.kt:9:9: error: unresolved reference: Y
+    if (Y%M==0){
+        ^
 ```
 ---
 ```
