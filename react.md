@@ -1,6 +1,28 @@
 # React
 ### 
 
+
+---
+```
+2024-06-15
+
+cd blog
+
+cd frontend 
+use port3000
+
+cd backend
+use port3001
+
+cd myblog/backend
+node server.js
+
+cd myblog/frontend
+npm start
+
+Add Postボタンが有効ではない
+
+```
 ---
 3.5
 
