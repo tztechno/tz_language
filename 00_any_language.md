@@ -14,11 +14,32 @@
 ```
 ---
 ```
-
+Как делать прогнозы.
+Cum să faci previziuni.
+Kaip daryti prognozes.
+Kā veikt prognozes.
+Quam vaticinari.
+Come fare previsioni.
+How to make predictions. 
 ```
 ---
 ```
-
+Questo taccuino mostra come effettuare previsioni utilizzando un modello salvato nel formato Onnx.
+Questo quaderno mostra come fare previsioni.
+Come fare previsioni.
+predizioni
+Dieses Notizbuch zeigt, wie man mit einem im Onnx-Format gespeicherten Modell Vorhersagen macht.
+Dieses Notizbuch zeigt, wie man Vorhersagen macht.
+Wie man Vorhersagen macht.
+Vorhersagen
+Este cuaderno muestra cómo hacer predicciones utilizando un modelo guardado en formato Onnx.
+Este cuaderno muestra cómo hacer predicciones.
+Cómo hacer predicciones.
+predicciones
+This notebook shows how to make predictions using a model saved in the Onnx format.
+This notebook shows how to make predictions.
+How to make predictions. 
+predictions
 ```
 ---
 ```
