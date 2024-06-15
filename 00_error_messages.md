@@ -21,6 +21,14 @@
 ```
 ---
 ```
+Main.java:12: error: no suitable method found for getNumericValue(String)
+        int Y=Character.getNumericValue(X);
+                       ^
+    method Character.getNumericValue(char) is not applicable
+      (argument mismatch; String cannot be converted to char)
+    method Character.getNumericValue(int) is not applicable
+      (argument mismatch; String cannot be converted to int)
+1 error
 ```
 ---
 ```
