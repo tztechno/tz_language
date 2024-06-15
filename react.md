@@ -1,6 +1,160 @@
 # React
 ### 
 
+---
+3.5
+
+`addpost`（投稿追加機能）を実装するには、フロントエンドとバックエンドの両方でいくつかのステップを踏む必要があります。以下に、それぞれのステップを示します。
+
+### バックエンドの実装
+
+#### 1. ExpressサーバーでのPOSTリクエストの処理
+
+バックエンドの `server.js` ファイルで、POSTリクエストを処理するエンドポイントを作成します。
+
+```javascript
+// server.js
+
+app.post('/api/posts', (req, res) => {
+  const { title, content } = req.body;
+  db.run("INSERT INTO posts (title, content) VALUES (?, ?)", [title, content], function (err) {
+    if (err) {
+      res.status(400).json({ error: err.message });
+      return;
+    }
+    res.json({
+      message: "success",
+      data: { id: this.lastID }
+    });
+  });
+});
+```
+
+#### 2. フロントエンドとの連携
+
+フロントエンドからこのエンドポイントにPOSTリクエストを送信するために、`axios`を使用します。
+
+### フロントエンドの実装
+
+#### 1. フォームの作成とデータの管理
+
+`PostForm.js` ファイルで投稿フォームを作成し、入力されたデータを管理します。
+
+```javascript
+// PostForm.js
+
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function PostForm() {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('/api/posts', { title, content })
+      .then(response => {
+        console.log(response.data); // 成功した場合の処理
+        // 投稿後にフォームをクリアするなどの処理を追加することもできます
+        setTitle('');
+        setContent('');
+      })
+      .catch(error => {
+        console.error('There was an error creating the post!', error); // エラーハンドリング
+      });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Title</label>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Content</label>
+        <textarea
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        ></textarea>
+      </div>
+      <button type="submit">Add Post</button>
+    </form>
+  );
+}
+
+export default PostForm;
+```
+
+#### 2. フォームの表示
+
+`App.js` ファイルで投稿フォームを表示します。
+
+```javascript
+// App.js
+
+import React from 'react';
+import PostList from './PostList';
+import PostForm from './PostForm';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Blog</h1>
+      <PostForm />
+      <PostList />
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 確認とテスト
+
+1. バックエンドサーバー (`node server.js`) とフロントエンドサーバー (`npm start`) を起動します。
+2. ブラウザでアプリケーションにアクセスし、投稿フォームが表示されることを確認します。
+3. フォームにタイトルとコンテンツを入力し、「Add Post」ボタンをクリックします。
+4. コンソールログやデータベースの内容を確認して、投稿が正しく追加されていることを確認します。
+
+これにより、フロントエンドからバックエンドにデータを送信し、データベースに新しい投稿を追加する機能が実装されます。
+
+
+---
+3.5
+
+確かに、バックエンドとフロントエンドを同時に立ち上げる場合は、別々のターミナルセッションを使用する必要があります。また、ポートが同じ場合には衝突が発生しますので、異なるポート番号を使用する必要があります。
+
+以下は、正しい手順です。
+
+### 1. バックエンドサーバーの起動
+
+まず、バックエンドサーバーを起動します。この例ではポート番号3000を使用します。
+
+```bash
+cd myblog/backend
+node server.js
+```
+
+### 2. フロントエンドサーバーの起動
+
+別のターミナルウィンドウを開いて、フロントエンドサーバーを起動します。通常はポート番号3000が使用されるため、フロントエンドは異なるポート番号（例えば3001）を使用します。
+
+```bash
+cd myblog/frontend
+npm start
+```
+
+### 注意点
+
+- バックエンドとフロントエンドが別々のポートで起動するようにします（通常、バックエンドが3000、フロントエンドが3001など）。
+- `cd ../` を使用するのは、現在の作業ディレクトリから親ディレクトリに移動するためですが、それぞれのターミナルセッションで適切なディレクトリに移動してからコマンドを実行する必要があります。
+- バックエンドとフロントエンドのポート番号を設定するには、それぞれのプロジェクトの設定ファイル（例えばExpressの設定ファイルやReactの設定ファイル）を変更する必要があります。
+
+これにより、バックエンドとフロントエンドが同時に立ち上がり、正常に連携できる状態になります。
 
 ---
 4.0
