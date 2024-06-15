@@ -21,6 +21,7 @@ cd myblog/frontend
 npm start
 
 Add Postボタンが有効ではない
+おそらく3.5では解決しない課題
 
 ```
 ---
