@@ -3,6 +3,22 @@
 ###
 
 ---
+```
+mkdir myblog
+cd myblog
+hugo server -D
+
+静生成
+cd myblog
+hugo
+http://localhost:1313/
+
+静確認
+cd public
+python -m http.server
+http://0.0.0.0:8000/
+```
+---
 
 はい、Hugoを使って生成された `public` ディレクトリの内容をGitHub Pagesで公開することは可能です。以下はその手順です：
 
