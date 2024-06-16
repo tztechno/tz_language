@@ -4,6 +4,103 @@
 
 
 ---
+```
+CURLを用いてポストすると、TOPページにJSONが蓄積されることはわかる
+実用には程遠い
+
+```
+---
+
+投稿を作成する方法について詳しく説明します。以下に、いくつかの方法を示します。Postmanやcurlコマンドを使用して、新規投稿を作成する手順を紹介します。
+
+### Postmanを使用する方法
+
+1. **Postmanのインストール**:
+   Postmanがインストールされていない場合、公式サイトからインストールします: [Postman公式サイト](https://www.postman.com/downloads/)
+
+2. **新しいリクエストを作成**:
+   - Postmanを開き、「New」ボタンをクリックして、新しいリクエストを作成します。
+
+3. **リクエストの設定**:
+   - **メソッド**: `POST`
+   - **URL**: `http://localhost:3000/post`
+   - **ボディ**: ボディタブを選択し、「raw」および「JSON」を選択します。次に、以下のJSONデータを入力します。
+     ```json
+     {
+       "title": "Test Post",
+       "content": "This is a test post."
+     }
+     ```
+
+4. **リクエストの送信**:
+   - 「Send」ボタンをクリックしてリクエストを送信します。
+
+### curlコマンドを使用する方法
+
+ターミナルまたはコマンドプロンプトを開き、以下のコマンドを実行して新規投稿を作成します。
+
+```sh
+curl -X POST http://localhost:3000/post -H "Content-Type: application/json" -d '{"title": "Test Post", "content": "This is a test post."}'
+```
+
+### main.go ファイルの確認
+
+サーバーが正しく起動していることを確認します。`main.go`ファイルが以下のように設定されていることを確認してください。
+
+```go
+package main
+
+import (
+	"log"
+	"github.com/gofiber/fiber/v2"
+	"myblog/database"
+	"myblog/handlers"
+)
+
+func main() {
+	app := fiber.New()
+
+	// データベース接続の初期化
+	database.InitDB()
+
+	// ルーティングの設定
+	app.Get("/", handlers.GetPosts)
+	app.Post("/post", handlers.CreatePost)
+	app.Get("/post/:id", handlers.GetPost)
+	app.Delete("/post/:id", handlers.DeletePost)
+
+	// サーバーの起動
+	log.Fatal(app.Listen(":3000"))
+}
+```
+
+### サーバーの起動
+
+ターミナルで以下のコマンドを実行してサーバーを起動します。
+
+```sh
+go run main.go
+```
+
+### 投稿の取得
+
+投稿が正常に作成された場合、以下のコマンドを実行して投稿を取得します。
+
+#### curlを使用する場合
+
+```sh
+curl http://localhost:3000/
+```
+
+### まとめ
+
+1. **Postman**や**curl**を使用して新規投稿を作成します。
+2. サーバーが正常に起動していることを確認します。
+3. 投稿を取得して、`http://localhost:3000/`にアクセスして投稿が表示されるか確認します。
+
+これらの手順を実行することで、投稿を作成し、データベースに保存された投稿を確認できるはずです。もし問題が続く場合は、どの段階で問題が発生しているかを教えてください。詳細なサポートを提供します。
+
+---
 
 `myblog`フォルダ内のファイル階層は、以下のように構成されると良いでしょう。これにより、プロジェクトの管理がしやすくなります。
 
