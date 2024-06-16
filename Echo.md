@@ -5,6 +5,160 @@
 ---
 3.5
 
+`ajax.html`でJavaScriptを使ってバックエンド（GoのEchoアプリケーション）と通信するための方法を説明します。以下の手順に従って実装していきます。
+
+### バックエンド（GoのEchoアプリケーション）の設定
+
+1. **Echoのルーティングを追加**:
+
+   GoのEchoアプリケーションで、`/calculate`エンドポイントにPOSTリクエストを処理するハンドラーを追加します。このハンドラーは、受け取った数値に基づいてLucas数を計算し、結果をJSON形式で返します。
+
+   ```go
+   package main
+
+   import (
+       "fmt"
+       "log"
+       "myblog/database"
+       "myblog/handlers"
+       "strconv"
+       "time"
+
+       "github.com/labstack/echo/v4"
+       "github.com/labstack/echo/v4/middleware"
+   )
+
+   func main() {
+       // データベース接続の初期化
+       database.InitDB()
+
+       // Echoのインスタンスを作成
+       e := echo.New()
+
+       // 静的ファイルをホストする設定
+       e.Static("/", "public") // "public"は静的ファイルが格納されているディレクトリ名に置き換える
+
+       // ミドルウェアの設定
+       e.Use(middleware.Logger())
+       e.Use(middleware.Recover())
+
+       // ルーティングの設定
+       e.GET("/", handlers.GetPosts)
+       e.POST("/post", handlers.CreatePost)
+       e.GET("/post/:id", handlers.GetPost)
+       e.DELETE("/post/:id", handlers.DeletePost)
+
+       // /calculate エンドポイントのハンドラーを追加
+       e.POST("/calculate", calculateLucasNumber)
+
+       // サーバーの起動
+       log.Fatal(e.Start(":3000"))
+   }
+
+   // calculateLucasNumber は /calculate エンドポイントのハンドラー関数
+   func calculateLucasNumber(c echo.Context) error {
+       // リクエストから数値 n を取得
+       var request struct {
+           N int `json:"n"`
+       }
+       if err := c.Bind(&request); err != nil {
+           return echo.NewHTTPError(http.StatusBadRequest, "Invalid request")
+       }
+       n := request.N
+
+       // Lucas数の計算
+       startTime := time.Now()
+       lucasNumber := getLucasNumber(n)
+       endTime := time.Now()
+       processTime := endTime.Sub(startTime).Milliseconds()
+
+       // 結果をJSONで返す
+       response := map[string]interface{}{
+           "result":      lucasNumber,
+           "process_time": processTime,
+       }
+       return c.JSON(http.StatusOK, response)
+   }
+
+   // getLucasNumber は n 番目のLucas数を計算する関数（例として単純な実装）
+   func getLucasNumber(n int) int {
+       if n == 0 {
+           return 2
+       }
+       if n == 1 {
+           return 1
+       }
+       return getLucasNumber(n-1) + getLucasNumber(n-2)
+   }
+   ```
+
+2. **Lucas数の計算処理**:
+
+   `getLucasNumber`関数は、単純な再帰による方法でn番目のLucas数を計算しています。実際のアプリケーションでは、より効率的な方法で計算する必要がありますが、ここでは例としてこの実装を使用しています。
+
+### ajax.htmlの設定
+
+`ajax.html`のJavaScript部分を、GoのEchoアプリケーションと通信するように変更します。
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lucas Number Calculator</title>
+</head>
+
+<body>
+    <p>AJAX Lucas Number</p>
+    <input type="number" id="inputN" placeholder="Enter a number">
+    <button onclick="sendRequest()">Calculate</button>
+    <div id="result"></div>
+    <div id="time"></div>
+
+    <script>
+        function sendRequest() {
+            const n = document.getElementById('inputN').value;
+            fetch('/calculate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ n: parseInt(n) }) // 数値型に変換してJSON形式で送信
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = `Lucas Number L${n} = ${data.result}`;
+                    document.getElementById('time').innerText = `Time: ${(data.process_time / 1000).toFixed(3)} sec`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
+```
+
+### 動作確認
+
+1. **サーバーの起動**:
+
+   コマンドラインで`go run main.go`を実行してEchoサーバーを起動します。
+
+   ```bash
+   go run main.go
+   ```
+
+2. **ブラウザでアクセス**:
+
+   ブラウザで `http://localhost:3000/ajax.html` にアクセスします。`ajax.html`の画面で数値を入力してCalculateボタンをクリックすると、バックエンドのEchoアプリケーションにPOSTリクエストが送信され、計算結果が表示されるはずです。
+
+この方法で、JavaScriptとEchoを使ってフロントエンドとバックエンドの通信を確立し、Lucas数を計算して結果を表示することができます。
+
+---
+3.5
+
 Echoを使用してGo言語でSQLiteを使ったブログを作成する手順を以下に示します。Echoは人気のある軽量なWebフレームワークであり、HTTPルーティングやミドルウェアの処理を簡単に行うことができます。
 
 ### 手順
