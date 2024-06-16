@@ -3,6 +3,120 @@
 ###
 
 
+
+---
+
+はい、`http://localhost:3000/`にアクセスすると、データベースに保存されている投稿の内容が表示されます。
+
+### 確認された流れ
+
+1. **新規投稿の作成**:
+   - Postmanやcurlを使って新規投稿を作成しました。
+   - 投稿の内容は、データベース（SQLite）の`posts`テーブルに保存されました。
+
+2. **投稿の取得**:
+   - ブラウザで`http://localhost:3000/`にアクセスすると、サーバーが`GET`リクエストを処理し、`posts`テーブルから全ての投稿を取得します。
+   - 取得した投稿は、JSON形式でブラウザに表示されます。
+
+### 背景の仕組み
+
+以下に、各部分がどのように機能しているかを再度説明します。
+
+#### main.go
+
+```go
+package main
+
+import (
+	"log"
+	"github.com/gofiber/fiber/v2"
+	"myblog/database"
+	"myblog/handlers"
+)
+
+func main() {
+	app := fiber.New()
+
+	// データベース接続の初期化
+	database.InitDB()
+
+	// ルーティングの設定
+	app.Get("/", handlers.GetPosts)
+	app.Post("/post", handlers.CreatePost)
+	app.Get("/post/:id", handlers.GetPost)
+	app.Delete("/post/:id", handlers.DeletePost)
+
+	// サーバーの起動
+	log.Fatal(app.Listen(":3000"))
+}
+```
+
+- `app.Get("/", handlers.GetPosts)`:
+  - `GET`リクエストを`/`エンドポイントに送信すると、`handlers.GetPosts`が呼び出されます。
+
+#### handlers/post.go
+
+```go
+package handlers
+
+import (
+	"database/sql"
+	"github.com/gofiber/fiber/v2"
+	"myblog/database"
+	"myblog/models"
+)
+
+func GetPosts(c *fiber.Ctx) error {
+	rows, err := database.DB.Query("SELECT id, title, content FROM posts")
+	if err != nil {
+		return c.Status(500).SendString(err.Error())
+	}
+	defer rows.Close()
+
+	var posts []models.Post
+	for rows.Next() {
+		var post models.Post
+		if err := rows.Scan(&post.ID, &post.Title, &post.Content); err != nil {
+			return c.Status(500).SendString(err.Error())
+		}
+		posts = append(posts, post)
+	}
+
+	return c.JSON(posts)
+}
+```
+
+- `GetPosts`関数:
+  - データベースから全ての投稿を取得し、JSON形式でクライアントに返します。
+
+### データベースの内容を確認する方法
+
+以下の方法でデータベースの内容を直接確認することもできます。
+
+#### SQLiteコマンドラインツール
+
+1. ターミナルを開き、SQLiteのシェルを起動します。
+   ```sh
+   sqlite3 blog.db
+   ```
+
+2. `posts`テーブルの内容を確認するSQLクエリを実行します。
+   ```sql
+   SELECT * FROM posts;
+   ```
+
+#### SQLite Browser
+
+1. [DB Browser for SQLite](https://sqlitebrowser.org/) をダウンロードしてインストールします。
+2. `blog.db`ファイルを開き、`posts`テーブルの内容を確認します。
+
+### まとめ
+
+- **ブラウザでの確認**: `http://localhost:3000/`にアクセスして、データベースに保存された投稿を表示します。
+- **データベースの直接確認**: SQLiteコマンドラインツールやDB Browser for SQLiteを使ってデータベースの内容を確認します。
+
+これで、データベースの内容が正しく表示されていることが確認できました。ブログアプリケーションの基本的な機能が正常に動作していることを確認できました。これから、必要に応じて機能を拡張したり、フロントエンドを追加したりすることで、より実用的なアプリケーションに発展させることができます。
+
 ---
 ```
 CURLを用いてポストすると、TOPページにJSONが蓄積されることはわかる
