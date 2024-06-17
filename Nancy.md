@@ -3,6 +3,24 @@
 ###
 
 ---
+```
+mono --version
+
+Mono JIT compiler version 6.10.0.104 (2019-12/5d03a6fe116 Wed Apr 29 20:51:09 EDT 2020)
+Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
+        TLS:           
+        SIGSEGV:       altstack
+        Notification:  kqueue
+        Architecture:  amd64
+        Disabled:      none
+        Misc:          softdebug 
+        Interpreter:   yes
+        LLVM:          yes(610)
+        Suspend:       hybrid
+        GC:            sgen (concurrent by default)
+
+```
+---
 3.5
 
 Nancyは、軽量で柔軟なC#向けのWebフレームワークですが、最近の情報に基づいて、NancyをMacにインストールする手順を以下に示します。
