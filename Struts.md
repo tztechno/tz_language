@@ -6,9 +6,97 @@
 
 ---
 
-
 ---
 
+Apache Strutsをコマンドラインで直接インストールするというよりも、Apache Strutsのライブラリをプロジェクトに追加して使う方法が一般的です。具体的には、MavenやGradleといったビルドツールを使用してプロジェクトに依存関係を追加し、それをビルドして利用します。
+
+### Mavenを使用した場合の例
+
+Mavenを使って新しいプロジェクトを作成し、Apache Strutsの依存関係を追加する手順を示します。
+
+1. **Mavenプロジェクトの作成**
+
+   Mavenを使って新しいプロジェクトを作成します。
+
+   ```bash
+   mvn archetype:generate -DgroupId=com.example.myapp -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+   ```
+
+   このコマンドにより、`myapp`という名前の新しいWebアプリケーションプロジェクトが作成されます。
+
+2. **pom.xmlに依存関係を追加**
+
+   作成したプロジェクトの`pom.xml`ファイルに、Apache Strutsの依存関係を追加します。
+
+   ```xml
+   <dependencies>
+       <dependency>
+           <groupId>org.apache.struts</groupId>
+           <artifactId>struts2-core</artifactId>
+           <version>2.x.x</version> <!-- 使用するStrutsのバージョン -->
+       </dependency>
+   </dependencies>
+   ```
+
+   `version`の部分には、使用したいApache Strutsのバージョンを指定します。
+
+3. **プロジェクトのビルド**
+
+   Mavenを使ってプロジェクトをビルドします。
+
+   ```bash
+   mvn clean package
+   ```
+
+   これにより、依存関係が解決され、プロジェクトがビルドされます。
+
+4. **Webアプリケーションのデプロイ**
+
+   ビルドが成功したら、生成されたWARファイルをWebサーバー（例えば、Apache Tomcat）にデプロイして実行します。
+
+### Gradleを使用した場合の例
+
+Gradleを使って新しいプロジェクトを作成し、Apache Strutsの依存関係を追加する手順を示します。
+
+1. **Gradleプロジェクトの作成**
+
+   Gradleを使って新しいプロジェクトを作成します。
+
+   ```bash
+   gradle init --type java-application
+   ```
+
+   このコマンドにより、Javaアプリケーション用の新しいプロジェクトが作成されます。
+
+2. **build.gradleに依存関係を追加**
+
+   作成したプロジェクトの`build.gradle`ファイルに、Apache Strutsの依存関係を追加します。
+
+   ```groovy
+   dependencies {
+       implementation 'org.apache.struts:struts2-core:2.x.x' // 使用するStrutsのバージョン
+   }
+   ```
+
+   `implementation`ブロック内に、使用したいApache Strutsのバージョンを指定します。
+
+3. **プロジェクトのビルド**
+
+   Gradleを使ってプロジェクトをビルドします。
+
+   ```bash
+   ./gradlew build
+   ```
+
+   これにより、依存関係が解決され、プロジェクトがビルドされます。
+
+4. **Webアプリケーションのデプロイ**
+
+   ビルドが成功したら、生成されたWARファイルをWebサーバー（例えば、Apache Tomcat）にデプロイして実行します。
+
+### まとめ
+
+Apache Strutsを利用する場合、通常はビルドツール（MavenやGradle）を使ってプロジェクトに依存関係を追加し、それをビルドする方法が推奨されます。この方法により、Apache Strutsのライブラリが自動的にダウンロードされ、プロジェクトで使用できるようになります。
 
 ---
 
