@@ -2,6 +2,37 @@
 # pycaret
 ###
 
+
+---
+
+はい、PyCaretでCPUとGPUを使用する場合、`setup`関数の設定が変化します。PyCaretはGPUアクセラレーションをサポートしており、GPUを使用することでモデルの訓練や予測の速度を向上させることができます。
+
+CPUを使用する場合の`setup`関数の例:
+```python
+from pycaret.classification import *
+
+exp_clf = setup(data = df, target = 'target', session_id=123)
+```
+
+GPUを使用する場合の`setup`関数の例:
+```python
+from pycaret.classification import *
+
+exp_clf = setup(data = df, target = 'target', session_id=123, use_gpu=True)
+```
+
+GPUを使用する場合、`setup`関数に`use_gpu=True`を追加します。これにより、PyCaretはGPUアクセラレーションを使用してモデルの訓練と予測を行います。
+
+ただし、以下の点に注意が必要です:
+
+1. GPUを使用するには、システムにCUDA対応のNVIDIA GPUが搭載されている必要があります。
+2. 適切なCUDAとcuDNNのバージョンがインストールされている必要があります。
+3. GPUを使用できるように、必要なPythonパッケージ（tensorflow-gpu, torch等）がインストールされている必要があります。
+
+これらの要件が満たされていない場合、`use_gpu=True`を指定してもGPUアクセラレーションは使用されず、CPUで処理が行われます。
+
+また、一部のアルゴリズムや機能はGPUアクセラレーションに対応していない場合があるため、注意が必要です。GPUを使用する際は、PyCaretのドキュメントを参照し、互換性を確認することをお勧めします。
+
 ---
 
 PyCaretはPythonのオープンソースライブラリで、機械学習のプロセスを簡略化し、コードの記述を最小限に抑えながら、強力なモデルを作成、評価、チューニング、デプロイするためのツールです。ここでは、PyCaretを使って簡単な機械学習パイプラインを構築する手順を紹介します。
