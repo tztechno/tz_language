@@ -2,6 +2,99 @@
 # Kitura
 ###
 
+
+---
+
+Kitura を使用して準備した HTML をルーティングする方法を説明します。HTML ファイルを静的ファイルとして提供する場合と、HTML を動的に生成して返す場合の2つの方法があります。
+
+### 方法1: 静的ファイルとして HTML を提供する
+
+1. **プロジェクトのセットアップ**
+
+   まず、プロジェクトのルートディレクトリに `Public` ディレクトリを作成し、その中に HTML ファイルを配置します。
+
+   ```plaintext
+   /HelloWeb
+   ├── Package.swift
+   ├── Sources
+   │   └── HelloWeb
+   │       └── main.swift
+   └── Public
+       └── index.html
+   ```
+
+   ここでは `Public` ディレクトリに `index.html` を配置する例を示しています。
+
+2. **ルーティングの設定**
+
+   `main.swift` ファイルで、Kitura を使用して `index.html` をルーティングします。
+
+   ```swift
+   // main.swift
+   import Kitura
+   import KituraStatic
+
+   let router = Router()
+
+   // 静的ファイルの提供
+   router.all("/", middleware: StaticFileServer())
+
+   Kitura.addHTTPServer(onPort: 8080, with: router)
+   Kitura.run()
+   ```
+
+   上記の例では、`StaticFileServer()` ミドルウェアを使用して全てのルート (`/`) に対して `Public` ディレクトリ内の静的ファイルを提供しています。
+
+3. **ビルドと実行**
+
+   ターミナルで以下のコマンドを実行して、プロジェクトをビルドし、サーバーを起動します。
+
+   ```bash
+   swift build
+   swift run
+   ```
+
+   ウェブブラウザで `http://localhost:8080` を開くと、`index.html` ファイルが表示されるはずです。
+
+### 方法2: ルーターで HTML を動的に生成する
+
+もう一つの方法として、Kitura を使用して動的に HTML を生成する方法があります。この方法では、ルーター内で HTML を生成し、それをクライアントに返します。
+
+1. **HTML を動的に生成する**
+
+   `main.swift` ファイルで、ルーティングと HTML の動的生成を設定します。
+
+   ```swift
+   // main.swift
+   import Kitura
+
+   let router = Router()
+
+   // ルートにアクセスした時に動的にHTMLを生成して返す
+   router.get("/") { request, response, next in
+       response.send("<html><body><h1>Hello, world!</h1></body></html>")
+       next()
+   }
+
+   Kitura.addHTTPServer(onPort: 8080, with: router)
+   Kitura.run()
+   ```
+
+   上記の例では、`router.get("/")` でルート (`/`) にアクセスした際に動的に HTML を生成しています。
+
+2. **ビルドと実行**
+
+   同様に、ターミナルで以下のコマンドを実行して、プロジェクトをビルドし、サーバーを起動します。
+
+   ```bash
+   swift build
+   swift run
+   ```
+
+   ウェブブラウザで `http://localhost:8080` を開くと、動的に生成された HTML が表示されるはずです。
+
+これらの方法を参考にして、Kitura を使用して準備した HTML をルーティングする方法を選択してください。静的ファイルとして提供する場合は `StaticFileServer()` を使用し、動的に生成する場合はルーティング内で HTML を生成して `response.send()` を使用します。
+
 ---
 
 Swift の Web フレームワークである Kitura を macOS にインストールする手順を説明します。Kitura は IBM によって開発されたフレームワークで、Swift でのサーバーサイドアプリケーション開発をサポートしています。
