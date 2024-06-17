@@ -50,7 +50,7 @@ dotnet build
 dotnet run
 ```
 
-`dotnet run`コマンドを実行すると、Kestrelサーバーが起動し、アプリケーションがホストされます。デフォルトでは、http://localhost:5000でアプリケーションにアクセスできます。
+`dotnet run`コマンドを実行すると、Kestrelサーバーが起動し、アプリケーションがホストされます。デフォルトでは、http://localhost:5000 でアプリケーションにアクセスできます。
 
 ### 6. Visual Studio Codeのインストール（オプション）
 より良い開発体験のために、Visual Studio Codeをインストールすることをお勧めします。以下のコマンドでHomebrewを使用してインストールできます。
