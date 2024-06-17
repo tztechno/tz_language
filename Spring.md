@@ -5,6 +5,101 @@
 
 ---
 
+エラーメッセージから判断すると、GradleがJava 17を必要としているが、システムに適切なJavaインストールが見つからないことが原因です。以下の手順でJava 17をインストールし、Gradleビルドを再試行します。
+
+### ステップ1: Java 17のインストール
+
+#### Homebrewを使用したインストール
+
+1. **Homebrewがインストールされていることを確認**
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **Java 17のインストール**
+   ```bash
+   brew install openjdk@17
+   ```
+
+3. **環境変数の設定**
+   ```bash
+   echo 'export PATH="/usr/local/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+
+### ステップ2: Javaのバージョン確認
+
+正しくインストールされ、設定されているか確認します。
+
+```bash
+java -version
+```
+
+期待される出力は以下のようなものです。
+
+```
+openjdk version "17.0.2" 2021-10-19
+OpenJDK Runtime Environment (build 17.0.2+8)
+OpenJDK 64-Bit Server VM (build 17.0.2+8, mixed mode)
+```
+
+### ステップ3: Gradleビルドの再試行
+
+1. **プロジェクトディレクトリに移動**
+   ```bash
+   cd ~/NancyStaticHtml  # プロジェクトのルートディレクトリに移動
+   ```
+
+2. **Gradleビルドを実行**
+   ```bash
+   ./gradlew build
+   ```
+
+### ステップ4: プロジェクト設定の確認
+
+`build.gradle` ファイルの設定を確認し、Java 17が正しく指定されていることを確認します。
+
+```groovy
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+```
+
+この設定により、Java 17を使用してビルドするようにGradleが指示されます。
+
+### ステップ5: Spring Bootアプリケーションの実行
+
+ビルドが成功したら、アプリケーションを実行します。
+
+```bash
+./gradlew bootRun
+```
+
+以上の手順に従えば、Java 17が正しくインストールされ、Spring Bootプロジェクトを正常にビルドおよび実行できるはずです。
+
+---
+
 JavaのSpringフレームワークをMacにインストールし、Visual Studio Code (VSCode)で使用する手順を以下に示します。
 
 ### 前提条件
