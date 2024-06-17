@@ -2,6 +2,51 @@
 # Crow
 ###
 
+
+---
+
+エラーメッセージを見ると、Homebrewの公式リポジトリ（formulae）にCrowの formula が存在しないようです。つまり、`brew install crow` コマンドではCrowをインストールできません。
+
+ただし、Crowはヘッダーオンリーのライブラリなので、リポジトリをクローンしてインクルードパスに追加することで使用できます。以下の手順で設定しましょう。
+
+1. 適当なディレクトリ（例: `~/libs`）に移動し、Crowのリポジトリをクローンします。
+
+   ```
+   cd ~/libs
+   git clone https://github.com/CrowCpp/Crow.git
+   ```
+
+2. 環境変数 `CPLUS_INCLUDE_PATH` にCrowのインクルードパスを追加します。bashの場合、以下のコマンドを実行します。
+
+   ```
+   export CPLUS_INCLUDE_PATH=~/libs/Crow/include:$CPLUS_INCLUDE_PATH
+   ```
+
+   これをシェルの設定ファイル（`~/.bashrc` や `~/.bash_profile`）に追加すると、永続的に設定されます。
+
+3. 先ほどのコンパイルコマンドを実行します。ただし、今回は `-I` オプションを使ってインクルードパスを指定する必要はありません。
+
+   ```
+   g++ main.cpp -o myapp
+   ```
+
+   Crowはヘッダーオンリーのライブラリなので、リンクするための追加のライブラリ（`-lcrow`）は不要です。
+
+4. コンパイルが成功したら、実行ファイル `myapp` を実行します。
+
+   ```
+   ./myapp
+   ```
+
+これで、Crowを使用したWebサーバーが起動するはずです。ブラウザで `http://localhost:18080` にアクセスして、正しく動作することを確認してください。
+
+Crowの最新バージョンを使用したい場合は、リポジトリを定期的にpullすることを忘れないでください。
+
+```
+cd ~/libs/Crow
+git pull
+```
+
 ---
 
 はい、`g++ main.cpp -o myapp -lcrow`は適切なコマンドです。
