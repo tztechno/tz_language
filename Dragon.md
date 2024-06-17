@@ -3,6 +3,71 @@
 ###
 
 ---
+4o
+
+C++のフレームワークである「Dragon」をMacにインストールする手順について説明します。「Dragon Framework」は、軽量で高性能なC++フレームワークで、主にゲーム開発などに使用されます。以下に、一般的な手順を示します。
+
+### 1. Homebrewのインストール
+HomebrewはMac用のパッケージマネージャです。インストールされていない場合は、ターミナルを開いて以下のコマンドを実行してインストールします。
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### 2. 必要な依存パッケージのインストール
+Dragon Frameworkを使用するために必要な依存パッケージをインストールします。これには、CMakeなどが含まれます。
+
+```bash
+brew install cmake
+```
+
+### 3. Dragon Frameworkのソースコードをダウンロード
+Dragon FrameworkのソースコードをGitHubなどからダウンロードします。以下は、GitHubからクローンする例です。
+
+```bash
+git clone https://github.com/dragonframework/dragon.git
+```
+
+### 4. ビルドとインストール
+クローンしたディレクトリに移動し、CMakeを使用してビルドします。
+
+```bash
+cd dragon
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
+
+### 5. 環境変数の設定
+ビルドとインストールが完了したら、必要に応じて環境変数を設定します。通常、`~/.bash_profile`や`~/.zshrc`ファイルにパスを追加します。
+
+```bash
+export DRAGON_HOME=/usr/local/dragon
+export PATH=$DRAGON_HOME/bin:$PATH
+```
+
+これを反映させるために、ターミナルを再起動するか、以下のコマンドを実行します。
+
+```bash
+source ~/.bash_profile
+# もしくは
+source ~/.zshrc
+```
+
+### 6. 動作確認
+正しくインストールされたかどうかを確認するために、以下のコマンドを実行します。
+
+```bash
+dragon --version
+```
+
+これでDragon Frameworkが正しくインストールされていれば、バージョン情報が表示されます。
+
+以上が、MacにC++のDragon Frameworkをインストールする手順です。具体的な詳細や最新情報については、Dragon Frameworkの公式ドキュメントやリポジトリのREADMEを参照してください。
+
+---
 
 ## projectフォルダのルートにFrame Dragonライブラリフォルダが必要な理由
 
