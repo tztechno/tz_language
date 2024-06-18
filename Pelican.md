@@ -5,6 +5,85 @@
 
 ---
 
+GitHub Pagesへのデプロイに関して、`python -m http.server`は必要ありません。これはローカル環境でサイトの動作を確認するためのコマンドです。したがって、GitHub Pagesにサイトを公開する手順には含まれません。
+
+以下に、GitHub Pagesへのデプロイ手順をまとめます。
+
+### 1. GitHub リポジトリを作成
+
+GitHub上で新しいリポジトリを作成します。このリポジトリは後で`output`ディレクトリの内容をホストするためのものです。
+
+### 2. Pelicanサイトをビルド
+
+Pelicanの設定ファイル（`pelicanconf.py`）を確認し、`SITEURL`をGitHub PagesのURLに設定します。
+
+```python
+# pelicanconf.py
+SITEURL = 'https://<your-username>.github.io/<your-repo>'
+RELATIVE_URLS = False
+```
+
+`<your-username>`と`<your-repo>`をあなたのGitHubユーザー名とリポジトリ名に置き換えます。
+
+その後、Pelicanでサイトをビルドします。
+
+```bash
+pelican content
+```
+
+### 3. `output` ディレクトリをGitリポジトリに初期化
+
+`output`ディレクトリに移動し、Gitリポジトリを初期化します。
+
+```bash
+cd output
+git init
+```
+
+### 4. リモートリポジトリを追加
+
+リモートリポジトリを追加します。
+
+```bash
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+```
+
+### 5. コミットとプッシュ
+
+`output`ディレクトリの内容をコミットしてGitHubにプッシュします。
+
+```bash
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+### 6. GitHub Pagesの設定確認
+
+GitHubリポジトリの設定ページに移動し、「Pages」セクションで`master`ブランチが選択されていることを確認します。
+
+これで、GitHub Pagesに公開されているはずです。
+
+### 7. オプション: ローカルでの確認
+
+公開前にローカル環境でサイトを確認したい場合は、`python -m http.server`を使用してローカルサーバーを起動し、ブラウザで確認することができます。
+
+```bash
+cd output
+python -m http.server
+```
+
+ただし、これはローカル確認用の手順であり、GitHub Pagesへのデプロイには直接関係しません。
+
+### まとめ
+
+- `python -m http.server`はローカル確認用であり、GitHub Pagesへのデプロイには不要です。
+- Pelicanでサイトをビルドし、`output`ディレクトリをGitHubにプッシュするだけでGitHub Pagesに公開できます。
+
+この手順に従ってデプロイを試してみてください。それでも表示に問題がある場合は、具体的なエラーメッセージや現象を教えていただければ、さらに詳細なサポートを提供できます。
+
+---
+
 Pelicanで生成した `output` ディレクトリの内容をGitHubリポジトリの `master` ブランチにプッシュする方法は、以下の手順になります。
 
 1. **GitHub リポジトリを作成する**
