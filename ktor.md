@@ -4,6 +4,109 @@
 
 ---
 
+MacでVisual Studio Code（VSC）を使用してKtorをインストールする手順を説明します。KtorはKotlinのフレームワークであり、VSCを使って開発を行うことができます。
+
+### 手順概要
+
+1. **KotlinとVSCの準備**
+   - Kotlinがインストールされていることを確認します。インストールされていない場合は、[公式サイト](https://kotlinlang.org/docs/tutorials/command-line.html)からインストールします。
+   - VSCがインストールされていることを確認します。インストールされていない場合は、[Visual Studio Codeの公式サイト](https://code.visualstudio.com/)からダウンロードしてインストールします。
+
+2. **プロジェクトの作成**
+   - VSCで新しいKotlinプロジェクトを作成します。
+
+3. **Ktorの依存関係を追加**
+   - `build.gradle.kts`（もしくは`build.gradle`）にKtorの依存関係を追加します。
+
+4. **サンプルアプリケーションの作成**
+   - 簡単なKtorアプリケーションを作成し、動作確認をします。
+
+### 具体的な手順
+
+#### 1. KotlinとVSCの準備
+
+まず、ターミナルを開いて、Kotlinがインストールされているか確認します。
+
+```bash
+kotlin -version
+```
+
+もしインストールされていなければ、Kotlinの[公式インストールガイド](https://kotlinlang.org/docs/tutorials/command-line.html)に従ってインストールします。
+
+次に、Visual Studio Code（VSC）を開きます。もしインストールされていなければ、[公式サイト](https://code.visualstudio.com/)からダウンロードしてインストールします。
+
+#### 2. プロジェクトの作成
+
+VSCで新しいプロジェクトを作成します。以下の手順を参考にしてください。
+
+- VSCを開きます。
+- メニューの **View** > **Command Palette** を選択します。
+- Command Paletteに `Kotlin: New Project` と入力し、Enterキーを押します。
+- プロジェクトのディレクトリと名前を入力し、Enterキーを押します。
+
+#### 3. Ktorの依存関係を追加
+
+プロジェクトのルートディレクトリにある `build.gradle.kts`（もしくは `build.gradle`）に、Ktorの依存関係を追加します。以下は例です。
+
+```kotlin
+plugins {
+    kotlin("jvm") version "1.8.0"
+    id("io.ktor.plugin") version "2.3.0"
+}
+
+group = "com.example"
+version = "1.0.0"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("io.ktor:ktor-server-core:2.3.0")
+    implementation("io.ktor:ktor-server-netty:2.3.0")
+    implementation("ch.qos.logback:logback-classic:1.2.3")
+}
+```
+
+#### 4. サンプルアプリケーションの作成
+
+`src/main/kotlin`ディレクトリに、Ktorアプリケーションのコードを作成します。以下は簡単な例です。
+
+```kotlin
+import io.ktor.application.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
+
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        routing {
+            get("/") {
+                call.respondText("Hello, Ktor on VSC!", contentType = io.ktor.http.ContentType.Text.Plain)
+            }
+        }
+    }.start(wait = true)
+}
+```
+
+#### 5. アプリケーションの実行
+
+アプリケーションを実行するためには、以下の手順を行います。
+
+- VSCのターミナルで、プロジェクトのルートディレクトリに移動します。
+- 以下のコマンドを入力して、アプリケーションを実行します。
+
+```bash
+./gradlew run
+```
+
+ブラウザで [http://localhost:8080](http://localhost:8080) にアクセスすると、"Hello, Ktor on VSC!"というメッセージが表示されるはずです。
+
+これで、Visual Studio Code（VSC）を使ってMacでKtorをインストールし、簡単なアプリケーションを作成・実行する準備が整いました。
+
+---
+
 Ktorは、Kotlin用のフレームワークで、サーバーやクライアントのアプリケーションを構築するためのものです。Ktorをインストールして使用するには、以下の手順に従います。
 
 ### 前提条件
