@@ -3,7 +3,25 @@
 ###
 
 
+---
 
+```
+cd myblog/y
+pelican content
+cd output
+
+python -m http.server
+http://0.0.0.0:8000/
+
+あるいは
+
+git init
+git remote add origin https://github.com/tztechno/tz_blog_pelican
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+```
 ---
 
 デプロイの成功、おめでとうございます！正しく設定してプッシュし直したことで、GitHub Pagesにサイトが正常に公開されたようでよかったです。
