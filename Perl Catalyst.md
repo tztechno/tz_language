@@ -1,6 +1,26 @@
 ###
-# Catalyst
+# Perl Catalyst
 ###
+
+
+---
+
+はい、PerlのCatalystとSwift Catalystは別物です。
+
+1. PerlのCatalyst:
+- PerlのWebアプリケーションフレームワークの一つ
+- Model-View-Controller (MVC) アーキテクチャに基づいている
+- Perlの強力な機能を活用し、迅速で拡張性の高いWebアプリケーションの開発を可能にする
+- オープンソースプロジェクトであり、Perl コミュニティによって維持されている
+
+2. Swift Catalyst (Xcode 11以降ではMac Catalyst):
+- AppleのiOSアプリをmacOSに移植するための開発フレームワーク
+- iOS用に開発されたアプリケーションをmacOS用に適応させるために使用される
+- iOSとmacOSの両方で動作するユニバーサルアプリケーションの作成を可能にする
+- SwiftやObjective-Cで書かれたiOSアプリに適用可能
+- macOS固有の機能や振る舞いを追加するためのAPIを提供している
+
+このように、PerlのCatalystはWebアプリケーション開発のためのフレームワークであり、Swift CatalystはiOSアプリをmacOSに移植するためのフレームワークです。両者は全く異なる目的と使用言語を持っています。
 
 ---
 
