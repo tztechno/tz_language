@@ -2,6 +2,55 @@
 # Nancy
 ###
 
+
+---
+
+using System;
+using Nancy;
+using Nancy.Hosting.Self;
+using Nancy.Conventions;
+
+namespace NancyDemo
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var hostConfigs = new HostConfiguration
+            {
+                UrlReservations = new UrlReservations { CreateAutomatically = true }
+            };
+
+            using (var host = new NancyHost(new Uri("http://localhost:1234"), new CustomBootstrapper(), hostConfigs))
+            {
+                host.Start();
+                Console.WriteLine("Nancyがリッスン中 - http://localhost:1234 にアクセスしてください。");
+                Console.ReadKey();
+            }
+        }
+    }
+
+    public class CustomBootstrapper : DefaultNancyBootstrapper
+    {
+        protected override void ConfigureConventions(NancyConventions conventions)
+        {
+            base.ConfigureConventions(conventions);
+            conventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("static", @"static")
+            );
+        }
+    }
+
+    public class MainModule : NancyModule
+    {
+        public MainModule()
+        {
+            Get("/", args => "Nancyからこんにちは！");
+        }
+    }
+}
+
+
 ---
 4o
 
