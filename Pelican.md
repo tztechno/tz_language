@@ -2,6 +2,43 @@
 # Pelican
 ###
 
+
+---
+
+Pelicanで生成した `output` ディレクトリの内容をGitHubリポジトリの `master` ブランチにプッシュする方法は、以下の手順になります。
+
+1. **GitHub リポジトリを作成する**
+   - GitHub 上で新しいリポジトリを作成します。このリポジトリは後で `output` ディレクトリの内容をホストするためのものです。
+
+2. **ローカルでの作業準備**
+   - ローカル環境で `output` ディレクトリにPelicanで生成したファイルが含まれていることを確認します。
+
+3. **Git の初期化とリモートリポジトリの設定**
+   - `output` ディレクトリ内で以下のコマンドを実行して、Git の初期化とリモートリポジトリの設定を行います。
+
+   ```bash
+   cd /path/to/output
+   git init
+   git remote add origin <GitHubリポジトリのURL>
+   ```
+
+   - `<GitHubリポジトリのURL>` には、作成したGitHubリポジトリのURLを指定します。
+
+4. **コミットとプッシュ**
+   - 以下のコマンドを使って、ファイルをコミットし、GitHubの`master`ブランチにプッシュします。
+
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push -u origin master
+   ```
+
+   - `git add .` は、全てのファイルをステージングエリアに追加します。
+   - `git commit -m "Initial commit"` は、ステージングエリアの内容をコミットします。コミットメッセージは任意ですが、ここでは "Initial commit" としています。
+   - `git push -u origin master` は、ローカルの `master` ブランチの内容をリモートの `master` ブランチにプッシュします。
+
+これにより、Pelicanで生成した `output` ディレクトリの内容がGitHubの `master` ブランチにプッシュされ、ホスティングされるようになります。
+
 ---
 
 Pelicanは、Pythonで書かれた静的サイトジェネレーターです。以下の手順に従ってPelicanをインストールし、新しいブログサイトを作成する方法を紹介します。
