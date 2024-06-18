@@ -4,6 +4,79 @@
 
 ---
 
+申し訳ありません、誤解を招く表現でした。Visual Studio Code（VSC）自体はプロジェクトを直接作成する機能はありません。Kotlinのプロジェクトを作成するためには、通常以下の手順を踏みます。
+
+### Kotlinプロジェクトの作成手順
+
+1. **プロジェクトディレクトリの作成**
+
+まず、ターミナル（コマンドライン）を開いて、プロジェクトを保存するディレクトリを作成します。
+
+```bash
+mkdir MyKotlinProject
+cd MyKotlinProject
+```
+
+2. **Gradleの初期化**
+
+Kotlinプロジェクトを初期化するには、Gradleを使用するのが一般的です。Gradleを初期化するには、次のコマンドを実行します。
+
+```bash
+gradle init --type kotlin-application
+```
+
+このコマンドにより、Kotlin用のGradleプロジェクトが初期化されます。`build.gradle.kts`（もしくは`build.gradle`）や、`src/main/kotlin`ディレクトリが作成されます。
+
+3. **プロジェクトをVisual Studio Codeで開く**
+
+次に、作成したプロジェクトをVisual Studio Codeで開きます。ターミナルから以下のコマンドを実行します。
+
+```bash
+code .
+```
+
+これにより、現在のディレクトリをVisual Studio Codeで開くことができます。
+
+4. **Ktorの依存関係を追加**
+
+前述のように、Ktorを使いたい場合は、`build.gradle.kts`（もしくは`build.gradle`）にKtorの依存関係を追加します。
+
+5. **Ktorアプリケーションの作成**
+
+Kotlinのコードを書いて、Ktorアプリケーションを作成します。具体的な例は前回の回答に記載されていますが、簡単なHTTPサーバーを作成する場合は以下のようになります。
+
+```kotlin
+import io.ktor.application.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
+
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        routing {
+            get("/") {
+                call.respondText("Hello, Ktor on VSC!", contentType = io.ktor.http.ContentType.Text.Plain)
+            }
+        }
+    }.start(wait = true)
+}
+```
+
+6. **アプリケーションの実行**
+
+最後に、ターミナルで以下のコマンドを実行して、Ktorアプリケーションを起動します。
+
+```bash
+./gradlew run
+```
+
+これにより、Ktorアプリケーションが起動し、ブラウザで [http://localhost:8080](http://localhost:8080) にアクセスすると、"Hello, Ktor on VSC!"というメッセージが表示されるはずです。
+
+以上が、Visual Studio CodeでKotlinプロジェクトを作成し、Ktorを使って簡単なアプリケーションを作成・実行する手順です。
+
+---
+
 MacでVisual Studio Code（VSC）を使用してKtorをインストールする手順を説明します。KtorはKotlinのフレームワークであり、VSCを使って開発を行うことができます。
 
 ### 手順概要
