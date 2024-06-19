@@ -28,6 +28,20 @@
 ```
 ---
 ```
+go get github.com/revel/revel
+go get github.com/revel/cmd/revel
+go: go.mod file not found in current directory or any parent directory.
+        'go get' is no longer supported outside a module.
+        To build and install a command, use 'go install' with a version,
+        like 'go install example.com/cmd@latest'
+        For more information, see https://golang.org/doc/go-get-install-deprecation
+        or run 'go help get' or 'go help install'.
+go: go.mod file not found in current directory or any parent directory.
+        'go get' is no longer supported outside a module.
+        To build and install a command, use 'go install' with a version,
+        like 'go install example.com/cmd@latest'
+        For more information, see https://golang.org/doc/go-get-install-deprecation
+        or run 'go help get' or 'go help install'.
 ```
 ---
 ```
