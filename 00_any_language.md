@@ -54,7 +54,11 @@
 ```
 ---
 ```
+You are given N strings.
 
+The i-th string Si​ (1≤i≤N) is either Takahashi or Aoki.
+
+How many i are there such that Si​ is equal to Takahashi?
 ```
 ---
 ```
