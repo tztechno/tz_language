@@ -50,7 +50,13 @@
 ```
 ---
 ```
+An evacuation order went into effect Thursday night for residents along the southeast side of the fire.
 
+the Arizona Department of Forestry and Fire Management said in a social media post. 
+
+The department said at least 60 homes were evacuated Thursday. 
+
+About 4.5 million people live in the county.
 ```
 ---
 ```
