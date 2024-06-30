@@ -46,6 +46,11 @@
 ```
 ---
 ```
+it’s very unlikely that ...
+about whether ...
+He faced little opposition 
+the fact means ...
+
 Joe Biden’s spotty debate performance immediately triggered new questions from worried Democrats about whether he would leave the presidential race.
 
 It would not be an easy process since Biden is already the Democrats’ presumptive nominee and the overwhelming choice of primary voters. 
