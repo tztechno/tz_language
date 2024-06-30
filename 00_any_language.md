@@ -34,22 +34,31 @@
 ```
 ---
 ```
-
+about whether ...
+We’re unsure about whether the meeting will take place tomorrow.
+She’s debating about whether to take the new job offer.
+There’s some confusion about whether the event is still happening.
 ```
 ---
 ```
-
+the fact that ... means ...
+The fact that it’s raining means we’ll have to cancel the picnic.
+The fact that he studied hard means he’ll likely pass the exam.
+The fact that the project was delayed means we need to adjust our schedule.
 ```
 ---
 ```
-
+it’s very unlikely that ...
+It’s very unlikely that she’ll arrive on time, given the traffic conditions.
+It’s very unlikely that the project will be completed by the deadline.
+It’s very unlikely that he forgot about our meeting; he’s always so punctual.
 ```
 ---
 ```
 it’s very unlikely that ...
 about whether ...
+the fact that ... means ...
 He faced little opposition 
-the fact means ...
 
 Joe Biden’s spotty debate performance immediately triggered new questions from worried Democrats about whether he would leave the presidential race.
 
