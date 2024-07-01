@@ -1,5 +1,6 @@
 ### latest
 
+
 ---
 ```
 
@@ -31,6 +32,34 @@
 ---
 ```
 
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+at a time of ...
+At a time of great change, it's important to stay adaptable and open to new opportunities.
+At a time of crisis, communities often come together to support each other.
+At a time of economic uncertainty, many people focus on saving money and reducing expenses.
+```
+---
+```
+raising questions about ...
+The recent policy changes are raising questions about their long-term impact on the economy.
+The discovery of new evidence in the case is raising questions about the initial investigation.
+The unexpected resignation of the CEO is raising questions about the company's future direction.
+```
+---
+```
+Their dramatic downfall has exposed deep-rooted alleged deceit in key sectors of Chinese leader Xi Jinping’s military modernization drive despite his decade-long war on graft, 
+
+raising questions about the country’s combat readiness at a time of heightened geopolitical tensions.
 ```
 ---
 ```
