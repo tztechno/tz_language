@@ -1,6 +1,5 @@
 ### latest
 
-
 ---
 ```
 
@@ -40,6 +39,25 @@
 ---
 ```
 
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+He expressed an opinion that...
+He expressed an opinion that education reform was urgently needed.
+He expressed an opinion that the company should focus more on sustainability initiatives.
+He expressed an opinion that the team's strategy needed to be reassessed for better results.
+```
+---
+```
+He expressed an opinion that is contradicted by the facts.
 ```
 ---
 ```
