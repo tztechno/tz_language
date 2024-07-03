@@ -38,15 +38,20 @@
 ```
 ---
 ```
-
+After retiring from work, he started learning programming and reached professional level within a few years.
+While retired from work, he started learning programming and reached a professional level within a few years.
+This restructuring emphasizes that learning programming occurred during retirement.
 ```
 ---
 ```
-
+while...
+While our company is small, our dedication to customer service sets us apart from larger competitors.
+While the initial investment in solar panels is high, they provide long-term savings on electricity bills.
+While the team's experience in digital marketing is diverse, their collaborative efforts ensure cohesive campaign strategies.
 ```
 ---
 ```
-
+While our carbon emissions are minuscule, our region bears the brunt of the impacts of climate change. 
 ```
 ---
 ```
@@ -122,22 +127,6 @@ the Arizona Department of Forestry and Fire Management said in a social media po
 The department said at least 60 homes were evacuated Thursday. 
 
 About 4.5 million people live in the county.
-```
----
-```
-You are given N strings.
-
-The i-th string Si​ (1≤i≤N) is either Takahashi or Aoki.
-
-How many i are there such that Si​ is equal to Takahashi?
-```
----
-```
-In the wake of former First Lady Rosalynn Carter's passing, the world is reminded of the profound love and partnership she shared with her husband, former President Jimmy Carter. 
-
-This enduring love story is not only a testament to their deep connection but also an inspiring example of a marriage that transcended the rigors of public life. 
-
-We delve into the remarkable marriage of Jimmy and Rosalynn Carter and their lasting legacy. 
 ```
 ---
 
