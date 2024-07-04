@@ -30,11 +30,17 @@
 ```
 ---
 ```
-
+are heading to ...
+We are heading to the beach for a relaxing weekend getaway.
+They are heading to the airport to catch their flight to Paris.
+The team is heading to the conference room to finalize the presentation.
 ```
 ---
 ```
-
+British voters are heading to the polls Thursday 
+for a crucial general election 
+that is being seen as a referendum 
+on 14 years of Conservative rule.
 ```
 ---
 ```
