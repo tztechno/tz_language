@@ -22,11 +22,23 @@
 ```
 ---
 ```
-
+They will inform climbers when they’re violating etiquette on the mountain,
+such as ...
+Leaving trash behind
+Disturbing wildlife
+Making excessive noise
+Straying off marked trails
+Damaging vegetation
+Cutting switchbacks
+Ignoring "Leave No Trace" principles
+Camping in unauthorized areas
+Not yielding the right of way to uphill climbers
+Using unauthorized drones
 ```
 ---
 ```
-
+They will inform climbers when they’re violating etiquette on the mountain,　such as
+sleeping by the side of the trail,　starting a fire or　wearing unsuitable clothing.
 ```
 ---
 ```
