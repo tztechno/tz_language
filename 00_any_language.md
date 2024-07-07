@@ -18,7 +18,12 @@
 ```
 ---
 ```
-
+Five Americans have been arrested in Turks and Caicos 
+over the past six months 
+under gun control laws 
+that make bringing firearms or ammunition 
+into the territory 
+without prior permission from police a crime.
 ```
 ---
 ```
