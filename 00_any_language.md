@@ -10,11 +10,16 @@
 ```
 ---
 ```
-
+It was the quick thinking of the driver, responsible for saving many lives in the accident.
+It was the new security system, responsible for the decrease in thefts at the store.
+It was her dedication and hard work, responsible for the project's success.
+It was a lot of elderly people not connected to the internet, responsible for Koike's victory.
 ```
 ---
 ```
-
+It was the heat that proved deadliest in New Orleans, 
+responsible for at least nine 
+of the city’s 14 hurricane-related deaths.
 ```
 ---
 ```
