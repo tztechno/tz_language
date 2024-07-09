@@ -2,11 +2,35 @@
 
 ---
 ```
-
 ```
 ---
 ```
-
+```
+---
+```
+```
+---
+```
+```
+---
+```
+```
+---
+```
+He has been the Emperor of the country for decades, ruling with wisdom and grace.
+He has been the Emperor of the country for decades, guiding his people through times of peace and turmoil.
+He has been the Emperor of the country for decades, his reign marked by prosperity and stability.
+```
+---
+```
+He has been ... for decades.
+He has been studying ancient history for decades.
+He has been working as a software engineer for decades.
+He has been collecting rare books for decades.
+```
+---
+```
+Joe Biden has been a politician for five decades. 
 ```
 ---
 ```
