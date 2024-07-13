@@ -8,7 +8,7 @@ NEXT.js（言語TypeScript）で作成します。完成したらVercelにDeploy
 ## 技術スタック
 
 #### Next.js
-  
+インストール方法
  ```bash
 cd myapp
 npx create-next-app@latest .
@@ -23,7 +23,6 @@ Async/Awaitを使ったAjax通信をセットします。async/awaitは、JavaSc
 #### Vercel
 Vercelはフロントエンド開発者向けのクラウドプラットフォームで、静的サイトやサーバーレス機能を簡単にデプロイ、管理できるサービスです
 Next.jsはVercelによって開発されているので、特にNext.jsアプリケーションのデプロイは簡単に成立します。
-
 
 
 ## フロントエンドの構築
