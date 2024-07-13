@@ -83,7 +83,7 @@ const Home = () => {
 export default Home;
 
 ```
-####  サーバーサイドの実装（API Routes）
+##  サーバーサイドの実装（API Routes）
 check.ts
 ```
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -119,8 +119,9 @@ Vercelでは自分のGithubが登録済みなので、pjのリポジトリを選
 
 
 ## 今後の展望
-Vercelの環境を使って、しばらくNext.jsを使うWebアプリの開発を続けようかと考えています。
-何か進捗があれば、記事を書くかもしれません。
+しばらくはNext.jsでWebアプリ作りを続ける予定です。
+
+
 
 
 
