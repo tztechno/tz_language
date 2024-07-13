@@ -94,6 +94,7 @@ export default Home;
 ##  サーバーサイドの実装
 check.ts
 NextApiRequestとNextApiResponseは、Next.jsのAPI Routesで使用するための型定義です。
+サーバーレスに対応する記載はこちらで行います。
 ```ts
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -140,7 +141,7 @@ myapp/
 Vercelでは自分のGithubが登録済みなので、pjのリポジトリを選ぶだけでDeployが成立します。
 
 ## 終わりに
-Vercelでは、多くのWebアプリのホスティングとデプロイに関連する機能が利用可能なので、
+Vercelでは、他にも多くのサーバーレスWebアプリや静的サイトのホスティングとデプロイに関連する機能が豊富にあります。
 色々試してみようと考えています。
 
 
