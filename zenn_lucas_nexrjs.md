@@ -1,6 +1,7 @@
 ## はじめに
 
 * プロジェクトの目的
+  ルーカス数の計算を行う簡単なWebアプリを作ります。
   フロント側でUIより数値入力します。バック側でルーカス数の計算を行い、計算結果と計算時間をフロントに返すというAjax通信を使った簡単なアプリを
   NEXT.JS（言語TypeScript）上に作成します。完成したらGitHubを介してVercelにDeployします。
 
@@ -14,14 +15,16 @@ cd myapp
 npx create-next-app@latest .
 ``` 
 * TypeScript
-  フロント側でtsxファイルとして、バック側でtsファイルとしてTypeScriptを使用します。
+  フロント側でtsxファイルとして、バック側でtsファイルとしてTypeScriptを使用します。tsxファイルは、TypeScriptとReactを組み合わせて使用するためのファイル形式です。通常のTypeScriptファイル (.ts) と似ていますが、Reactコンポーネントで使用されるJSX構文をサポートしています。
+  
 * Ajax通信の実装方法
   Async/Awaitを使ったAjax通信をセットします。
-*Vercel
-VercelはNEXTJSの開発元である。GitHub Pagesが静的htmlしか公開できないのに対し、NEXTJSなどで作ったサーバーを必要とするWebアプリを無料で公開できる。
-Streamlitと同様、GitHubにアップした上で、連携するだけで簡単にDeployが成立する。
 
-ルーカス数列計算機能の実装
+
+* Vercelはフロントエンド開発者向けのクラウドプラットフォームで、静的サイトやサーバーレス機能を簡単にデプロイ、管理できるサービスです
+Next.jsはVercelによって開発されているのでNext.jsアプリケーションのデプロイと運用に特化した機能を提供しています。
+Streamlitと同様、GitHubにアップした上で、そのリポジトリを連携させることにより簡単にDeployが成立します。
+
 
 ## フロントエンドの構築
 
