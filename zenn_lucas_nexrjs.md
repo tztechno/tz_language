@@ -33,7 +33,7 @@ Next.jsはVercelによって開発されているので、特にNext.jsアプリ
 
 元々async/awaitを用いたAjax通信を想定したjsのscriptが準備されていたので、これをtypescriptに翻訳します。
 #### index.html（使用せず）
-```
+```html
 <!DOCTYPE html>
     <script>
         async function checkNumber() {
@@ -52,7 +52,7 @@ Next.jsはVercelによって開発されているので、特にNext.jsアプリ
 
 ```
 #### index.tsx（front側）
-```
+```tsx
 import { useState } from 'react';
 const Home = () => {
     const [number, setNumber] = useState<number | undefined>(undefined);
@@ -89,7 +89,8 @@ export default Home;
 ```
 ##  サーバーサイドの実装
 check.ts
-```
+NextApiRequestとNextApiResponseは、Next.jsのAPI Routesで使用するための型定義です。
+```ts
 import { NextApiRequest, NextApiResponse } from 'next';
 
 // Lucas数を計算する関数
@@ -116,6 +117,19 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 ```
+## ファイル階層
+```text
+nyapp/
+├── pages/
+│   ├── api/
+│   │   └── check.ts
+│   └── index.tsx
+├── public/
+├── styles/
+├── next.config.js
+└── package.json
+```
+
 ## デプロイ
 
 ローカルで作成したpjホルダをGitHubの専用リポジトリにpushします。
