@@ -16,9 +16,13 @@ npx create-next-app@latest .
 インストール時に言語TypeScriptを指定しておき、フロント側でtsxファイルとして、バック側でtsファイルとしてTypeScriptを使用します。
 tsxファイルは、TypeScriptとReactを組み合わせて使用するためのファイル形式です。
   
-#### Ajax
+#### AJAX
 Async/Awaitを使ったAjax通信をセットします。async/awaitは、JavaScriptで非同期処理をより簡潔かつに書くための構文です。
 これにより、従来のコールバック関数やプロミス（Promise）を使用したコードよりも、同期的なコードのように書けるようになります。
+
+### API Routes
+Next.jsのサーバーサイドでAPIエンドポイントを作成するための仕組みです。これにより、サーバーサイドでデータベース操作や他の外部サービスとの通信を行うことができます。
+API Routesは、AJAXリクエストの送信先として使用されます。クライアントサイドからAJAXリクエストを送信し、そのリクエストをAPI Routesが処理してレスポンスを返します。
 
 #### Vercel
 Vercelはフロントエンド開発者向けのクラウドプラットフォームで、静的サイトやサーバーレス機能を簡単にデプロイ、管理できるサービスです
@@ -83,7 +87,7 @@ const Home = () => {
 export default Home;
 
 ```
-##  サーバーサイドの実装（API Routes）
+##  サーバーサイドの実装
 check.ts
 ```
 import { NextApiRequest, NextApiResponse } from 'next';
