@@ -27,9 +27,9 @@ Next.jsはVercelによって開発されているので、特にNext.jsアプリ
 
 ## フロントエンドの構築
 
-#### Ajax通信の実装
 元々async/awaitを用いたAjax通信を想定したjsのscriptが準備されていたので、これをtypescriptに翻訳します。
-  ```
+#### index.html（使用せず）
+```
 <!DOCTYPE html>
     <script>
         async function checkNumber() {
@@ -46,9 +46,9 @@ Next.jsはVercelによって開発されているので、特にNext.jsアプリ
         }
     </script>
 
-  ```
-* index.tsx（front側）
-  ```
+```
+#### index.tsx（front側）
+```
 import { useState } from 'react';
 const Home = () => {
     const [number, setNumber] = useState<number | undefined>(undefined);
@@ -82,8 +82,8 @@ const Home = () => {
 };
 export default Home;
 
-  ```
-##  サーバーサイドの実装（API Routes）
+```
+####  サーバーサイドの実装（API Routes）
 check.ts
 ```
 import { NextApiRequest, NextApiResponse } from 'next';
