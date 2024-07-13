@@ -8,16 +8,17 @@
 ## 技術スタック
 
 #### Next.js
-  インストール時に言語TypeScriptを指定します。
+  
  ```bash
 cd myapp
 npx create-next-app@latest .
 ``` 
-#### TypeScript
-  フロント側でtsxファイルとして、バック側でtsファイルとしてTypeScriptを使用します。tsxファイルは、TypeScriptとReactを組み合わせて使用するためのファイル形式です。
+インストール時に言語TypeScriptを指定しておき、フロント側でtsxファイルとして、バック側でtsファイルとしてTypeScriptを使用します。
+tsxファイルは、TypeScriptとReactを組み合わせて使用するためのファイル形式です。
   
 #### Ajax通信の実装
-  Async/Awaitを使ったAjax通信をセットします。async/awaitは、JavaScriptで非同期処理をより簡潔かつに書くための構文です。これにより、従来のコールバック関数やプロミス（Promise）を使用したコードよりも、同期的なコードのように書けるようになります。
+  Async/Awaitを使ったAjax通信をセットします。async/awaitは、JavaScriptで非同期処理をより簡潔かつに書くための構文です。
+  これにより、従来のコールバック関数やプロミス（Promise）を使用したコードよりも、同期的なコードのように書けるようになります。
 
 #### Vercel
   Vercelはフロントエンド開発者向けのクラウドプラットフォームで、静的サイトやサーバーレス機能を簡単にデプロイ、管理できるサービスです
