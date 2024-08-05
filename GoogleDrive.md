@@ -1,7 +1,104 @@
 
 ---
 
+ユーザーの端末で開かれているWebアプリから直接Google Driveの公開フォルダーにファイルをアップロードするためには、Google Apps Script（GAS）を使ってバックエンドサービスを提供し、そこにファイルを送信するのが現実的なアプローチです。以下の手順で、GASを利用してこのフローを実現する方法を具体的に説明します。
 
+### 1. Google Apps Script (GAS) のセットアップ
+
+まず、Google Apps Scriptを使ってファイルを受け取ってGoogle Driveに保存するサービスを作成します。
+
+#### GASコードの作成
+
+1. **Google DriveでGoogle Apps Scriptプロジェクトを作成**:
+    - Google Driveで「新規」->「その他」->「Google Apps Script」を選択します。
+
+2. **GASコードを作成**:
+    ```javascript
+    function doPost(e) {
+        try {
+            // POSTリクエストからデータを取得
+            var params = JSON.parse(e.postData.contents);
+
+            // 公開フォルダのIDを指定
+            var folder = DriveApp.getFolderById('YOUR_FOLDER_ID'); 
+            
+            // Blobを作成し、ファイルとしてフォルダに保存
+            var blob = Utilities.newBlob(params.content, 'text/csv', params.fileName);
+            var file = folder.createFile(blob);
+
+            // ファイルのURLをレスポンスとして返す
+            return ContentService.createTextOutput(JSON.stringify({ url: file.getUrl() })).setMimeType(ContentService.MimeType.JSON);
+        } catch (error) {
+            // エラーハンドリング
+            return ContentService.createTextOutput(JSON.stringify({ error: error.toString() })).setMimeType(ContentService.MimeType.JSON);
+        }
+    }
+    ```
+
+3. **GASプロジェクトをデプロイ**:
+    - 「デプロイ」->「ウェブアプリケーションとしてデプロイ」を選択。
+    - 新しいプロジェクトバージョンを作成。
+    - 「実行するアプリケーションを次のユーザーとして実行」は「自分」。
+    - 「アクセス権」は「全員（匿名ユーザーを含む）」を選択。
+    - デプロイし、ウェブアプリケーションのURLをコピー。
+
+### 2. フロントエンド（Webアプリ）からリクエストを送信
+
+次に、ユーザーの端末上で動作するWebアプリケーションからGASに対してリクエストを送信するコードを作成します。
+
+```jsx
+import React from 'react';
+import Papa from 'papaparse';
+
+const handleSaveCSV = (progressData) => {
+    const csvContent = Papa.unparse(
+        Object.entries(progressData).map(([region, progress]) => ({
+            region,
+            progress,
+        }))
+    );
+
+    const fileName = `Progress_${new Date().toISOString().replace(/[:.]/g, '-')}.csv`;
+
+    fetch('YOUR_GAS_WEB_APP_URL', {
+        method: 'POST',
+        body: JSON.stringify({ content: csvContent, fileName }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.url) {
+            console.log('File uploaded successfully:', data.url);
+        } else {
+            console.error('Error uploading file:', data.error);
+        }
+    })
+    .catch(error => console.error('Error uploading file:', error));
+};
+
+const App = ({ progressData }) => (
+    <div>
+        <button onClick={() => handleSaveCSV(progressData)}>Save CSV to Google Drive</button>
+    </div>
+);
+
+export default App;
+```
+
+### 解説
+
+1. **GASの`doPost`関数**:
+    - フロントエンドからのPOSTリクエストを受け取り、JSON形式のデータを解析します。
+    - 解析されたデータを使ってBlob（バイナリラージオブジェクト）を作成し、指定された公開フォルダーにファイルとして保存します。
+    - ファイルのURLをJSONレスポンスとして返します。
+
+2. **フロントエンドの`handleSaveCSV`関数**:
+    - `progressData`をCSV形式に変換し、GASウェブアプリケーションのURLに対してPOSTリクエストを送信します。
+    - レスポンスとして返されたファイルのURLをログに表示します。
+
+この方法により、ユーザーの端末上で生成されたファイルを公開フォルダーに直接アップロードすることができます。GASがバックエンドサービスとして動作し、認証を簡略化してくれます。
 
 ---
 
