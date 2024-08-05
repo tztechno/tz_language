@@ -5,7 +5,87 @@
 
 ---
 
+Webアプリ上で生成したファイルをGoogle Driveの公開フォルダーに送信する場合、Google Apps Scriptを使用して認証を簡略化する方法が有効です。以下にその手順を詳しく説明します。
 
+### Google Apps Scriptのセットアップ
+
+1. **Google Apps Scriptプロジェクトを作成する**
+    - Google Driveで「新規」->「その他」->「Google Apps Script」を選択します。
+
+2. **スクリプトを作成する**
+    ```javascript
+    function doPost(e) {
+        try {
+            var params = JSON.parse(e.postData.contents);
+            var folder = DriveApp.getFolderById('YOUR_FOLDER_ID'); // 公開フォルダのIDを指定
+            var blob = Utilities.newBlob(params.content, 'text/csv', params.fileName);
+            var file = folder.createFile(blob);
+            return ContentService.createTextOutput(JSON.stringify({ url: file.getUrl() })).setMimeType(ContentService.MimeType.JSON);
+        } catch (f) {
+            return ContentService.createTextOutput(JSON.stringify({ error: f.toString() })).setMimeType(ContentService.MimeType.JSON);
+        }
+    }
+    ```
+
+3. **デプロイする**
+    - 「デプロイ」->「ウェブアプリケーションとしてデプロイ」を選択し、新しいプロジェクトバージョンを作成してデプロイします。
+    - 「実行するアプリケーションを次のユーザーとして実行」は「自分」、アクセス権は「全員（匿名ユーザーを含む）」を選択します。
+    - ウェブアプリケーションのURLをコピーします。
+
+### Webアプリからのリクエスト
+
+次に、WebアプリからGoogle Apps Scriptを呼び出してファイルをアップロードします。
+
+```jsx
+import React from 'react';
+import Papa from 'papaparse';
+
+const handleSaveCSV = (progressData) => {
+    const csvContent = Papa.unparse(
+        Object.entries(progressData).map(([region, progress]) => ({
+            region,
+            progress,
+        }))
+    );
+
+    const fileName = `Progress_${new Date().toISOString().replace(/[:.]/g, '-')}.csv`;
+
+    fetch('YOUR_WEB_APP_URL', {
+        method: 'POST',
+        body: JSON.stringify({ content: csvContent, fileName }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.url) {
+            console.log('File uploaded successfully:', data.url);
+        } else {
+            console.error('Error uploading file:', data.error);
+        }
+    })
+    .catch(error => console.error('Error uploading file:', error));
+};
+
+const App = ({ progressData }) => (
+    <div>
+        <button onClick={() => handleSaveCSV(progressData)}>Save CSV to Google Drive</button>
+    </div>
+);
+
+export default App;
+```
+
+### 注意点
+
+1. **公開フォルダーの設定**
+    - Google Driveのフォルダーが「リンクを知っている全員が閲覧可能」に設定されていることを確認してください。
+
+2. **セキュリティ**
+    - ウェブアプリケーションは全員に公開されるため、不正なアクセスを防ぐための対策を講じることを検討してください。例えば、リクエストにシークレットキーを含め、そのキーを検証するようにするなどの方法があります。
+
+この方法により、WebアプリケーションからGoogle Driveの公開フォルダーにファイルを直接アップロードすることができます。
 
 ---
 
