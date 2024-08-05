@@ -2,6 +2,96 @@
 
 ---
 
+HTML上で実験的に実装するために、最小限のセットアップでGoogle Driveにファイルをアップロードする例を示します。以下のコードを使って、Webページ上でボタンをクリックするとCSVファイルが生成され、Google Apps Scriptを通じてGoogle Driveに保存されるようにします。
+
+### 前提条件
+
+1. Google Apps Scriptがセットアップされ、ウェブアプリケーションとしてデプロイされていること。
+2. 公開フォルダのIDをGoogle Apps Scriptのコードに設定していること。
+3. GASウェブアプリケーションのURLを取得していること。
+
+### Google Apps Script (GAS) のコード
+
+以下のコードをGASに追加してデプロイします。
+
+```javascript
+function doPost(e) {
+    try {
+        var params = JSON.parse(e.postData.contents);
+        var folder = DriveApp.getFolderById('YOUR_FOLDER_ID'); // 公開フォルダのIDを指定
+        var blob = Utilities.newBlob(params.content, 'text/csv', params.fileName);
+        var file = folder.createFile(blob);
+        return ContentService.createTextOutput(JSON.stringify({ url: file.getUrl() })).setMimeType(ContentService.MimeType.JSON);
+    } catch (error) {
+        return ContentService.createTextOutput(JSON.stringify({ error: error.toString() })).setMimeType(ContentService.MimeType.JSON);
+    }
+}
+```
+
+### HTMLおよびJavaScriptコード
+
+次に、以下のHTMLおよびJavaScriptコードを使って実験的に実装します。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Upload to Google Drive</title>
+</head>
+<body>
+    <h1>CSV Upload to Google Drive</h1>
+    <button id="saveCsvButton">Save CSV to Google Drive</button>
+
+    <script>
+        document.getElementById('saveCsvButton').addEventListener('click', function () {
+            const progressData = {
+                'Region1': '50%',
+                'Region2': '75%',
+                'Region3': '100%'
+            };
+
+            const csvContent = Object.entries(progressData).map(([region, progress]) => `${region},${progress}`).join('\n');
+            const fileName = `Progress_${new Date().toISOString().replace(/[:.]/g, '-')}.csv`;
+
+            fetch('YOUR_GAS_WEB_APP_URL', {
+                method: 'POST',
+                body: JSON.stringify({ content: csvContent, fileName }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.url) {
+                    console.log('File uploaded successfully:', data.url);
+                } else {
+                    console.error('Error uploading file:', data.error);
+                }
+            })
+            .catch(error => console.error('Error uploading file:', error));
+        });
+    </script>
+</body>
+</html>
+```
+
+### 説明
+
+1. **HTML**:
+    - シンプルなボタンを用意し、クリックするとJavaScriptの処理が開始されます。
+
+2. **JavaScript**:
+    - `progressData`オブジェクトにサンプルデータを用意しています。
+    - `csvContent`変数にCSV形式の文字列を作成します。
+    - `fetch`を使ってGASウェブアプリケーションのURLにPOSTリクエストを送信し、生成したCSVデータとファイル名を送ります。
+    - レスポンスを受け取り、成功した場合にはコンソールにアップロードされたファイルのURLを表示し、失敗した場合にはエラーメッセージを表示します。
+
+これにより、HTMLページ上のボタンをクリックするだけで、CSVファイルをGoogle Driveに直接アップロードすることができます。
+
+---
+
 ファイル出力ボタンを直接Google Driveに送信するリクエストに変換することは可能です。これには、ユーザーがボタンをクリックしたときに生成されるファイルの内容をGoogle Apps ScriptにPOSTリクエストとして送信する必要があります。以下は、その実装例です。
 
 ### Google Apps Script (GAS) のセットアップ
