@@ -2,6 +2,77 @@
 
 ---
 
+APIキーやOAuth 2.0を使用せずに、Google Driveにファイルをアップロードすることは、直接的には難しいです。Google Drive APIにアクセスするためには、通常これらの認証手段が必要です。
+
+しかし、もし簡単な方法でファイルをGoogle Driveにアップロードしたい場合、Google DriveのウェブインターフェースやGoogle Apps Scriptを使う方法もあります。以下は、Google Apps Scriptを使用して、OAuth 2.0を必要とせずにHTML上からファイルをGoogle Driveにアップロードする方法です。
+
+### 手順
+
+1. **Google Apps Scriptの作成**:
+   - Google Drive内で新しいGoogle Apps Scriptプロジェクトを作成します。
+   - 以下のコードをGoogle Apps Scriptに貼り付けます。
+
+    ```javascript
+    function doGet() {
+      return HtmlService.createHtmlOutputFromFile('form.html')
+          .setSandboxMode(HtmlService.SandboxMode.IFRAME);
+    }
+
+    function uploadFileToDrive(data, fileName) {
+      var folder = DriveApp.getFolderById('YOUR_FOLDER_ID');  // フォルダIDを指定
+      var contentType = data.substring(5, data.indexOf(';'));
+      var bytes = Utilities.base64Decode(data.substr(data.indexOf('base64,') + 7));
+      var blob = Utilities.newBlob(bytes, contentType, fileName);
+      var file = folder.createFile(blob);
+      return file.getUrl();
+    }
+    ```
+
+   - `YOUR_FOLDER_ID` を、アップロード先のGoogle DriveフォルダIDに置き換えます。
+
+2. **HTMLファイルの作成**:
+   - 同じGoogle Apps Scriptプロジェクトで、`form.html`という名前のHTMLファイルを作成し、以下のHTMLコードを追加します。
+
+    ```html
+    <form id="myForm">
+      <input type="file" id="fileInput" />
+      <input type="button" value="Upload File" onclick="uploadFile()" />
+    </form>
+    <div id="output"></div>
+
+    <script>
+      function uploadFile() {
+        var fileInput = document.getElementById('fileInput');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+          var data = e.target.result;
+          google.script.run.withSuccessHandler(function(url) {
+            document.getElementById('output').innerHTML = 'File uploaded: <a href="' + url + '" target="_blank">View File</a>';
+          }).uploadFileToDrive(data, file.name);
+        };
+        
+        reader.readAsDataURL(file);
+      }
+    </script>
+    ```
+
+3. **デプロイ**:
+   - 「デプロイ」 > 「新しいデプロイ」 > 「ウェブアプリ」としてデプロイします。
+   - 必要に応じてアクセスを「全員（インターネット上の誰でも）」に設定し、「デプロイ」ボタンを押します。
+
+4. **アップロード**:
+   - デプロイされたウェブアプリのURLにアクセスし、CSVファイルを選択して「Upload File」ボタンをクリックすると、選択されたファイルが指定のGoogle Driveフォルダにアップロードされます。
+
+### 注意点
+- この方法では、Google Apps Scriptを使用するため、OAuth 2.0やAPIキーは必要ありませんが、スクリプト自体がGoogleアカウントに結びついているため、基本的な認証は行われています。
+- アップロード先のフォルダを公開する必要がある場合、セキュリティに注意してください。
+
+この方法を使えば、認証手段を簡略化しつつ、HTMLフォームからファイルをGoogle Driveにアップロードできます。
+
+---
+
 HTML上で実験的に実装するために、最小限のセットアップでGoogle Driveにファイルをアップロードする例を示します。以下のコードを使って、Webページ上でボタンをクリックするとCSVファイルが生成され、Google Apps Scriptを通じてGoogle Driveに保存されるようにします。
 
 ### 前提条件
